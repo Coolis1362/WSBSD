@@ -12,7 +12,7 @@
         "FriendlyName": "FreeBSD",
         "Current WSBSD Version": "14.2",
         "Website": "https://www.freebsd.org/",
-        "Defult": true,
+        "Default": true,
         "Description": "FreeBSD is a free and open-source Unix-like operating system derived from BSD, the version of UNIX developed at the University of California, Berkeley. It is known for its performance, advanced networking features, and security.",
         "Path In WSBSD": "C:\\WSLBSD\\BSD_DISTROS\\FreeBSD"
     }
