@@ -1,0 +1,16 @@
+{
+    "What's BSD": [
+        {
+            "Name": "BSD (Berkeley Software Distribution)",
+            "Description": "A Unix-like operating system derived from the original AT&T Unix, developed and distributed by the University of California, Berkeley. BSD is known for its advanced networking features, performance, and security.",
+            "Goal For WSBSD": "Answer This GitHub Discussion: https://github.com/microsoft/WSL/discussions/6540"
+        }
+    ],
+    "FreeBSD":[
+        {
+            "Name": "FreeBSD",
+            "Current WSBSD Version": "14.2",
+            "Website": "https://www.freebsd.org/"
+        }
+    ]
+}
