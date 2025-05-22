@@ -16,8 +16,8 @@ Hello There, Choose This Pull Request Template If You Are Adding Support For A B
 
 ## Issues Solved
 
-- Solves #< Issue Number Here (BSD Distro support) >
-- Solves # < Issue Number Here (BSD Distro Version Support) >
+- [ ] Solves #< Issue Number Here (BSD Distro support) >
+- [ ] Solves #< Issue Number Here (BSD Distro Version Support) >
 
 - [ ] Issues Solved
 
