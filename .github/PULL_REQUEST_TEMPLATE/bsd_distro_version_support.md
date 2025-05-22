@@ -4,16 +4,16 @@ Hello There, Choose This Pull Request Template If You Are Adding Support For A B
 
 # BSD Distro Name
 
-Put BSD Distro Name The Version You Wanted To Support Here
+< BSD Distro Name Here >
 
 ## Version
 
-Put Version You Want To Support Here
+< BSD Distro Version Here >
 
 ## Issues Solved
 
-- Solves #<!--Issuse Number Here (BSD Distro support) -->
-- Solves #<!--Issuse Number Here (BSD Distro Version Support) -->
+- Solves #<!--Issue Number Here (BSD Distro support) -->
+- Solves #<!--Issue Number Here (BSD Distro Version Support) -->
 
 ## Description
 
