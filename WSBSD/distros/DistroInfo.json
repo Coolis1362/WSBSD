@@ -9,6 +9,7 @@
     "FreeBSD": [
     {
         "Name": "FreeBSD",
+        "FriendlyName": "FreeBSD",
         "Current WSBSD Version": "14.2",
         "Website": "https://www.freebsd.org/",
         "Defult": true,
