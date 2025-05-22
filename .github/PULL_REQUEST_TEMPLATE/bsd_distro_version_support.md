@@ -6,20 +6,20 @@ Hello There, Choose This Pull Request Template If You Are Adding Support For A B
 
 < BSD Distro Name Here >
 
-- []BSD Distro Name
+- [ ] BSD Distro Name
 
 ## Version
 
 < BSD Distro Version Here >
 
-- []BSD Distro Version
+- [ ] BSD Distro Version
 
 ## Issues Solved
 
 - Solves #<!--Issue Number Here (BSD Distro support) -->
 - Solves #<!--Issue Number Here (BSD Distro Version Support) -->
 
-- [] Issues Solved
+- [ ] Issues Solved
 
 ## Description
 
