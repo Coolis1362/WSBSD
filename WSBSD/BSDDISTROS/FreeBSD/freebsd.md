@@ -6,6 +6,10 @@ FreeBSD Is Pre-installed In WSBSD, Because It Is The Most Popular BSD distro. An
 
 ## FreeBSD Version Changelog (14.x)
 
+Checked = The Version Is Supported
+
+Unchecked = The Version Is Not Supported
+
 - [x] FreeBSD 14.2
 - [ ] FreeBSD 14.3
 - [ ] FreeBSD 14.4
