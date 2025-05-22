@@ -11,3 +11,5 @@ FreeBSD Is Pre-installed In WSBSD, Because It Is The Most Popular BSD distro. An
 - [ ] FreeBSD 14.4
 - [ ] FreeBSD 14.5
 - [ ] FreeBSD 14.6
+
+(The root Folder Is The '/' Directory Of The FreeBSD Distro)
