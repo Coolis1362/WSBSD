@@ -1,1 +1,6 @@
 .vs/
+# Ignore Visual Studio build files
+obj/
+bin/
+.vs/
+*.cache
