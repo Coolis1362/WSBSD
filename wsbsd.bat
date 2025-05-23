@@ -1,6 +1,6 @@
 if "%1"=="--start--FreeBSD"(
     echo Starting WSBSD FreeBSD...
-    WSBSD FreeBSD Default (14.2).exe
+    "C:\\WSLBSD\\FreeBSD\\14.2 (Default)\\root\\WSBSD FreeBSD 14.2 Default (14.2)\\WSBSD FreeBSD 14.2 Default (14.2)\\bin\\Debug\\WSBSD FreeBSD 14.2 Default (14.2).exe"
 )
 else if "%1"=="--version"(
     echo WSBSD Kernel Version 1.0.0.1
