@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices; // Required for DllImport
-<<<<<<< HEAD
 using System.Windows.Forms;
 using Hardware.Info;
-=======
->>>>>>> 400157da22113e3caa6ce7c213a4b23b5dfb6d5e
 
 class Program
 {
