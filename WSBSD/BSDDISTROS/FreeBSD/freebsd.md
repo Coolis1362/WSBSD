@@ -17,3 +17,5 @@ Unchecked = The Version Is Not Supported
 - [ ] FreeBSD 14.6
 
 (The root Folder Is The '/' Directory Of The FreeBSD Distro)
+
+(Because Of Big the FreeBSD Filesystem, There Is Only 1 Folder In The root Folder Which is 'bin')
