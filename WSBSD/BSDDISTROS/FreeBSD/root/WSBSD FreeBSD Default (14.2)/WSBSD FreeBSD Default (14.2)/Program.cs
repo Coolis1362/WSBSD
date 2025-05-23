@@ -3,6 +3,7 @@ using System.Runtime.InteropServices; // Required for DllImport
 using System.Windows.Forms;
 using System.Management;
 using System.IO;
+using System.Threading;
 
 class Program
 {
@@ -18,11 +19,25 @@ class Program
     static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("Starting WSBSD 1.0.0.1...");
+        Thread.Sleep(1000);
+        Console.WriteLine("Starting WSBSD UNIX 7.0...");
+        Thread.Sleep(1000);
+        Console.WriteLine("Starting WSBSD 4.4BSDLite...");
+        Thread.Sleep(1000);
+        Console.WriteLine("Starting WSBSD  FreeBSD 14-STABLE");
+        Thread.Sleep(1000);
+        Console.WriteLine("All Kernels started Now Starting WSBSD FreeBSD 14.2");
+        Thread.Sleep(1000);
+        Console.WriteLine("FreeBSD Started Booting sh...");
+        Thread.Sleep(1000);
+        Console.Clear();
         while (true)
         {
             Console.WriteLine($"System Uptime: {GetUptime()}");
             string currentDirectory = Directory.GetCurrentDirectory();
-            Console.Write($"\n[{Environment.UserName}@{Environment.MachineName} {currentDirectory}]$ "); // Simulate terminal prompt
+            string fixedPath = currentDirectory.Replace('\\', '/');
+            Console.Write($"\n[{Environment.UserName}@{Environment.MachineName} {fixedPath}]$ "); // Simulate terminal prompt
             string command = Console.ReadLine()?.Trim();
 
             if (string.IsNullOrWhiteSpace(command))
