@@ -41,6 +41,30 @@ class Program
                 Console.WriteLine("Exiting WSBSD terminal.");
                 break;
             }
+            else if (command == "help")
+            {
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd (More Commands Are In The Works)");
+            }
+            else if (command == "ls")
+            {
+                string[] files = Directory.GetFiles(currentDirectory);
+                foreach (string file in files)
+                {
+                    Console.WriteLine(Path.GetFileName(file));
+                }
+            }
+            else if (command.StartsWith("cd "))
+            {
+                string path = command.Substring(3).Trim();
+                if (Directory.Exists(path))
+                {
+                    Directory.SetCurrentDirectory(path);
+                }
+                else
+                {
+                    Console.WriteLine($"Directory '{path}' not found.");
+                }
+            }
             else
             {
                 Console.WriteLine("Command not found.");
