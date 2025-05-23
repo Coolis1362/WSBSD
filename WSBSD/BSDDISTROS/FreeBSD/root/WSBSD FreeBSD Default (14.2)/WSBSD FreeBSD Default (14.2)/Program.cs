@@ -43,7 +43,7 @@ class Program
             }
             else if (command == "help")
             {
-                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd (More Commands Are In The Works)");
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo (More Commands Are In The Works)");
             }
             else if (command == "ls")
             {
@@ -64,6 +64,12 @@ class Program
                 {
                     Console.WriteLine($"Directory '{path}' not found.");
                 }
+            }
+            else if (command.StartsWith("echo "))
+            {
+                string print_request = command.Substring(5);
+                Console.WriteLine(print_request);
+
             }
             else
             {
