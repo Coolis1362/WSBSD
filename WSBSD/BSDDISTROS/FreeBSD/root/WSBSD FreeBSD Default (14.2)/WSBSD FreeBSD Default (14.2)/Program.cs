@@ -55,12 +55,14 @@ class Program
         Console.WriteLine("FreeBSD Started Booting sh...");
         Thread.Sleep(1000);
         Console.Clear();
+        bool isRoot = false; // Track root status
         while (true)
         {
             Console.WriteLine($"System Uptime: {GetUptime()}");
             string currentDirectory = Directory.GetCurrentDirectory();
             string fixedPath = currentDirectory.Replace('\\', '/');
-            Console.Write($"\n[{Environment.UserName}@{Environment.MachineName} {fixedPath}]$ "); // Simulate terminal prompt
+            string prompt = isRoot ? " ROOT#" : " NORMALUSER$"; // Switch prompt dynamically
+            Console.Write($"\n[{Environment.UserName}@{Environment.MachineName} {fixedPath}]{prompt} ");
             string command = Console.ReadLine()?.Trim();
 
             if (string.IsNullOrWhiteSpace(command))
@@ -81,7 +83,7 @@ class Program
             }
             else if (command == "help")
             {
-                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine (More Commands Are In The Works)");
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, root (More Commands Are In The Works)");
             }
             else if (command == "ls")
             {
@@ -128,6 +130,13 @@ class Program
             {
                 string exe_name = command.Substring(5).Trim();
                 RunCommand($"{currentDirectory}\\{exe_name}.exe");
+            }
+            else if (command == "root")
+            {
+                isRoot = true;
+                Console.WriteLine("You are now in root mode.");
+                Thread.Sleep(1000);
+                Console.WriteLine("WARNING: YOU CAN'T CHAGE BACK TO A NORMAL USER");
             }
             else
             {
