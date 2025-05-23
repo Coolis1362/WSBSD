@@ -136,7 +136,13 @@ class Program
                 isRoot = true;
                 Console.WriteLine("You are now in root mode.");
                 Thread.Sleep(1000);
-                Console.WriteLine("WARNING: YOU CAN'T CHAGE BACK TO A NORMAL USER");
+            }
+            else if (command == "root exit")
+            {
+                if (isRoot = true)
+                {
+                    Console.WriteLine("");
+                }
             }
             else
             {
