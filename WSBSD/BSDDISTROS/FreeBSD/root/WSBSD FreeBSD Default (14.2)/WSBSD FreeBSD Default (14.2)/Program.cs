@@ -145,6 +145,7 @@ class Program
             Console.WriteLine("ASCII Logo Loaded."); // Debug message
         }
         Console.WriteLine(systemInfo);
+        Console.WriteLine("System Info Loaded."); // Debug message
         Console.ReadKey(); // Prevents console from closing immediately
     }
 }
