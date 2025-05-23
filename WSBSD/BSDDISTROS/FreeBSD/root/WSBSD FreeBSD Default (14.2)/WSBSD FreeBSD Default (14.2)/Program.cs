@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Management;
 using System.IO;
 using System.Threading;
+using System.Diagnostics;
 
 class Program
 {
@@ -15,6 +16,25 @@ class Program
         ulong uptime = GetTickCount64(); // Call Windows API
         TimeSpan time = TimeSpan.FromMilliseconds(uptime);
         return $"{time.Days} days, {time.Hours} hours, {time.Minutes} mins";
+    }
+    static void RunCommand(string command)
+    {
+        ProcessStartInfo psi = new ProcessStartInfo
+        {
+            FileName = "cmd.exe",
+            Arguments = $"/C {command}",
+            RedirectStandardOutput = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+
+        using (Process process = new Process { StartInfo = psi })
+        {
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            Console.WriteLine(output);
+        }
     }
     static void Main()
     {
@@ -60,7 +80,7 @@ class Program
             }
             else if (command == "help")
             {
-                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo (More Commands Are In The Works)");
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install (More Commands Are In The Works)");
             }
             else if (command == "ls")
             {
@@ -97,6 +117,11 @@ class Program
             {
                 Console.WriteLine("WSBSD Terminal v1.0.0.1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
                 Console.WriteLine("Developed by Coolis1362");
+            }
+            else if (command.StartsWith("pkg install "))
+            {
+                string msi_name = command.Substring(12).Trim();
+                RunCommand($"{currentDirectory}\\{msi_name}.msi");
             }
             else
             {

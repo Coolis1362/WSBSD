@@ -46,6 +46,7 @@
 		<Reference Include="System.Management" />
 		<Reference Include="System.IO" />
 		<Reference Include="System.Threading" />
+		<Reference Include="System.Diagnostics" />
 	</ItemGroup>
 
   <ItemGroup>
