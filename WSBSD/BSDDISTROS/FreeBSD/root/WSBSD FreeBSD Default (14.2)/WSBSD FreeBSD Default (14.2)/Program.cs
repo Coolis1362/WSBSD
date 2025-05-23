@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices; // Required for DllImport
 using System.Windows.Forms;
-using Microsoft.VisualBasic.Devices;
+using System.Management;
+using System.IO;
 
 class Program
 {
@@ -20,7 +21,8 @@ class Program
         while (true)
         {
             Console.WriteLine($"System Uptime: {GetUptime()}");
-            Console.Write("\nWSBSD$ "); // Simulate terminal prompt
+            string currentDirectory = Directory.GetCurrentDirectory();
+            Console.Write($"\n[{Environment.UserName}@{Environment.MachineName} {currentDirectory}]$ "); // Simulate terminal prompt
             string command = Console.ReadLine()?.Trim();
 
             if (string.IsNullOrWhiteSpace(command))
@@ -54,7 +56,17 @@ class Program
         }
         return "Unknown CPU";
 
-    }   static void Neofetch()
+    }
+    static string GetRAMInfo()
+    {
+        ManagementObjectSearcher mos = new ManagementObjectSearcher("SELECT * FROM Win32_ComputerSystem");
+        foreach (ManagementObject mo in mos.Get())
+        {
+            return $"{Math.Round(Convert.ToDouble(mo["TotalPhysicalMemory"]) / 1073741824, 2)} GB";
+        }
+        return "Unknown RAM";
+    }
+    static void Neofetch()
     {
         Console.WriteLine("Starting Neofetch..."); // Debug message
         string asciiLogo = @" 
@@ -110,7 +122,6 @@ class Program
                             ..-=*#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*=:..                         
                                 ..:=+*#%%%%%%%%%%%%%%%%%%%%%%%%##*+-:..                             
         ";
-        ComputerInfo ci = new ComputerInfo();
         string systemInfo = $@"
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
@@ -119,9 +130,7 @@ class Program
         Uptime: {GetUptime()}
         Shell: sh
         CPU: {GetCPUInfo()}
-        RAM: {ci.TotalPhysicalMemory / 1073741824} GB
-        CPU: Intel Core i7-8700K
-        RAM: 16GB
+        RAM: {GetRAMInfo()} GB
         ";
 
         // 🛠️ **Updated printing method to prevent buffer overload**
