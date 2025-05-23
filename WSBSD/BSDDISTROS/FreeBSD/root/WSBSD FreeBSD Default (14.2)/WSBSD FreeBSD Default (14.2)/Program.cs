@@ -56,9 +56,10 @@ class Program
         Thread.Sleep(1000);
         Console.Clear();
         bool isRoot = false; // Track root status
+        Console.WriteLine($"System Uptime: {GetUptime()}");
+        Console.WriteLine("\nPrompt Character Key: $ = Normal User (Standard Users) # = Root User (Administrator Users)");
         while (true)
         {
-            Console.WriteLine($"System Uptime: {GetUptime()}");
             string currentDirectory = Directory.GetCurrentDirectory();
             string fixedPath = currentDirectory.Replace('\\', '/');
             string prompt = isRoot ? " ROOT#" : " NORMALUSER$"; // Switch prompt dynamically
