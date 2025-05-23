@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices; // Required for DllImport
 using System.Windows.Forms;
-using Hardware.Info;
+using Microsoft.VisualBasic.Devices;
 
 class Program
 {
@@ -45,8 +45,16 @@ class Program
             }
         }
     }
+    static string GetCPUInfo()
+    {
+        ManagementObjectSearcher mos = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+        foreach (ManagementObject mo in mos.Get())
+        {
+            return mo["Name"].ToString();
+        }
+        return "Unknown CPU";
 
-    static void Neofetch()
+    }   static void Neofetch()
     {
         Console.WriteLine("Starting Neofetch..."); // Debug message
         string asciiLogo = @" 
@@ -102,8 +110,7 @@ class Program
                             ..-=*#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*=:..                         
                                 ..:=+*#%%%%%%%%%%%%%%%%%%%%%%%%##*+-:..                             
         ";
-        var hardwareInfo = new HardwareInfo();
-        hardwareInfo.RefreshAll();
+        ComputerInfo ci = new ComputerInfo();
         string systemInfo = $@"
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
@@ -111,8 +118,8 @@ class Program
         Kernel: FREEBSDKERNEL: FreeBSD 14-STABLE | BSDKENREL: 4.4BSDLite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.1
         Uptime: {GetUptime()}
         Shell: sh
-        CPU: {hardwareInfo.Cpu.Name}
-        RAM: {hardwareInfo.Memory.Total} GB
+        CPU: {GetCPUInfo()}
+        RAM: {ci.TotalPhysicalMemory / 1073741824} GB
         CPU: Intel Core i7-8700K
         RAM: 16GB
         ";
