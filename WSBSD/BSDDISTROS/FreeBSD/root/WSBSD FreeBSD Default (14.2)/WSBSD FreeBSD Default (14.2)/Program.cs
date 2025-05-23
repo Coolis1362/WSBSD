@@ -5,6 +5,7 @@ using System.Management;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 class Program
 {
@@ -80,7 +81,7 @@ class Program
             }
             else if (command == "help")
             {
-                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install (More Commands Are In The Works)");
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine (More Commands Are In The Works)");
             }
             else if (command == "ls")
             {
@@ -122,6 +123,11 @@ class Program
             {
                 string msi_name = command.Substring(12).Trim();
                 RunCommand($"{currentDirectory}\\{msi_name}.msi");
+            }
+            else if (command.StartsWith("wine "))
+            {
+                string exe_name = command.Substring(5).Trim();
+                RunCommand($"{currentDirectory}\\{exe_name}.exe");
             }
             else
             {
