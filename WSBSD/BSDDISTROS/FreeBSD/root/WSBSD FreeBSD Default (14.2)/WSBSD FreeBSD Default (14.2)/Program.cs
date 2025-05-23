@@ -71,6 +71,16 @@ class Program
                 Console.WriteLine(print_request);
 
             }
+            else if (command.StartsWith("cat "))
+            {
+                string filePath = command.Substring(4).Trim();
+                CatCommand(filePath);
+            }
+            else if (command == "about")
+            {
+                Console.WriteLine("WSBSD Terminal v1.0.0.1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
+                Console.WriteLine("Developed by Coolis1362");
+            }
             else
             {
                 Console.WriteLine("Command not found.");
@@ -152,16 +162,16 @@ class Program
                             ..-=*#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*=:..                         
                                 ..:=+*#%%%%%%%%%%%%%%%%%%%%%%%%##*+-:..                             
         ";
-        string systemInfo = $@"
+        string systemInfo = $"\u001b[31m" + $@"
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
         OS: FreeBSD 14.2-RELEASE On {Environment.OSVersion.VersionString} amd64 (x64 or 64 Bits)
         Kernel: FREEBSDKERNEL: FreeBSD 14-STABLE | BSDKENREL: 4.4BSDLite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.1
         Uptime: {GetUptime()}
-        Shell: sh
+        Shell: sh (Unix V7, 1979)
         CPU: {GetCPUInfo()}
-        RAM: {GetRAMInfo()} GB
-        ";
+        RAM: {GetRAMInfo()} GB" + "\u001b[0m";
+
 
         // 🛠️ **Updated printing method to prevent buffer overload**
         if (!Console.IsOutputRedirected)
@@ -177,5 +187,17 @@ class Program
         Console.WriteLine(systemInfo);
         Console.WriteLine("System Info Loaded."); // Debug message
         Console.ReadKey(); // Prevents console from closing immediately
+    }
+    static void CatCommand(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            string content = File.ReadAllText(filePath);
+            Console.WriteLine(content);
+        }
+        else
+        {
+            Console.WriteLine($"Error: File '{filePath}' not found.");
+        }
     }
 }
