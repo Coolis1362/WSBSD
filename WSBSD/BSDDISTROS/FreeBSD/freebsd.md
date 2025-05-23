@@ -18,4 +18,4 @@ Unchecked = The Version Is Not Supported
 
 (The root Folder Is The '/' Directory Of The FreeBSD Distro)
 
-(Because Of Big the FreeBSD Filesystem, There Is Only 1 Folder In The root Folder Which is 'bin')
+(Because Of Big the FreeBSD Filesystem Is, There Is Only 1 Folder In The root Folder Which is 'bin')
