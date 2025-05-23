@@ -70,8 +70,8 @@ class Program
     {
         Console.WriteLine("Starting Neofetch..."); // Debug message
         string asciiLogo = @" 
-        :#%%%%%%%%%%#*=-..                     ....:---=========--::...                     ..:=+*#%%%%%%%#:
-        =%%%%%%%%%%%%%%%#*+-..            ..:-=*##%%%%%%%%%%%%%%%%%%%##*=-:..           ..:=*#%%%%%%%%%%%%%*
+:#%%%%%%%%%%#*=-..                     ....:---=========--::...                   ..:=+*#%%%%%%%#:
+ =%%%%%%%%%%%%%%%#*+-..            ..:-=*##%%%%%%%%%%%%%%%%%%%##*=-:..         ..:=*#%%%%%%%%%%%%%*
 =%%%%%%%%%%%%%%%%%%%%#=:..   ..:-*#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#+-:..  ..:=*#%%%%%%%%%%%%%%%%%*
 -%%%%%%%%%%%%%%%%%%%%##+:...-*#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##+:.:+#%%%%%%%%%%%%%%%%%%%%%=
 .*%%%%%%%%%%%%%%%%%#*:...=##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#*+*=:.:+##%%%%%%%%%%%%%%%%%%%%%%#.
@@ -125,7 +125,7 @@ class Program
         string systemInfo = $@"
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
-        OS: FreeBSD 14.2-RELEASE On {Environment.OSVersion.VersionString}
+        OS: FreeBSD 14.2-RELEASE On {Environment.OSVersion.VersionString} amd64 (x64 or 64 Bits)
         Kernel: FREEBSDKERNEL: FreeBSD 14-STABLE | BSDKENREL: 4.4BSDLite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.1
         Uptime: {GetUptime()}
         Shell: sh
