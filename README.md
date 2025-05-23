@@ -29,8 +29,8 @@ IF YOU SEE A WSBSD VERSION BUT NOT ON RELEASES PAGE, IT MEANS IT NOT FINISHED YE
 
 C# And .exe Files Made Via Visual Studio 2022 17.14.2 Preview 1.0 (AS OF 5/23/2025)
 
-## Histroy
+## History
 
-Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Temrinal app Project It Makes It Why C# Is the Most Used Langauges In This Repo.
+Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Terminal app Project It Makes It Why C# Is the Most Used Languages In This Repo.
 
 The Upcoming WSBSD-FreeBSD-14.3-Branch Branch Will Be Worked On Around June 3rd And June 4th When FreeBSD 14.3 OS Will Be Released
