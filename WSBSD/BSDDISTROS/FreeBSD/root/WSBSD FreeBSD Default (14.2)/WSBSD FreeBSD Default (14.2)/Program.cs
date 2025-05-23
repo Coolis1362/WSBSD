@@ -141,7 +141,12 @@ class Program
             {
                 if (isRoot = true)
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine("You Are Now Exiting Root");
+                    isRoot = false;
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: NOT IN ROOT MODE!");
                 }
             }
             else
