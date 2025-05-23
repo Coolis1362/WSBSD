@@ -11,4 +11,4 @@ while True:
     command = input(freebsd_prompt())
     if command.lower() == "exit":
         break
-    os.system(f"C:\\WSBSD\\FreeBSD\\bin\\{command}.bat")
+    os.system(f"C:\\WSBSD\\FreeBSD\\root\\bin\\{command}.bat")
