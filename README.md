@@ -33,3 +33,5 @@ C# And .exe Files Made Via Visual Studio 2022 17.14.2 Preview 1.0 (AS OF 5/23/20
 ## Histroy
 
 Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Temrinal app Project It Makes It Why C# Is the Most Used Langauges In This Repo.
+
+WSBSD-FreeBSD-14.3-Branch Branch Will Be Worked On Around June 3rd And June 4th When FreeBSD 14.3 OS Will Be Released
