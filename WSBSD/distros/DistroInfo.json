@@ -15,7 +15,7 @@
         "Default": true,
         "Description": "FreeBSD is a free and open-source Unix-like operating system derived from BSD, the version of UNIX developed at the University of California, Berkeley. It is known for its performance, advanced networking features, and security.",
         "Path In WSBSD": "C:\\WSLBSD\\FreeBSD\\14.2 (Default)",
-        "Executable Filepath": "C:\\WSLBSD\\FreeBSD\\14.2 (Default)\\root\\WSBSD FreeBSD 14.2 Default (14.2)\\WSBSD FreeBSD 14.2 Default (14.2)\\bin\\Debug\\WSBSD FreeBSD 14.2 Default (14.2).exe"
+        "Executable Filepath": "C:\\WSLBSD\\FreeBSD\\14.2 (Default)\\root\\WSBSD FreeBSD 14.2 Default (14.2).exe"
     }
   ]
 }
