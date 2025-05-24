@@ -57,6 +57,17 @@ class Program
         Console.WriteLine("NetBSD Started Booting sh...");
         Thread.Sleep(1000);
         Console.Clear();
+        Console.WriteLine($"System Uptime: {GetUptime()}");
+        while (true)
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fixedPath = currentDirectory.Replace('\\', '/');
+            Console.Write("\n# ");
+            string command = Console.ReadLine()?.Trim();
+
+            if (string.IsNullOrWhiteSpace(command))
+                continue;
+        }
 
     }
 }
