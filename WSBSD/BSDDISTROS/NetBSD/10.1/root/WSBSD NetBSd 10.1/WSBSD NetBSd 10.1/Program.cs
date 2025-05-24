@@ -217,10 +217,12 @@ class Program
                                        .:=++**************++=-::...                                 
                                             .....::::.....                             
         ";
-        string systemInfo = $"\u001b[38;2;203;65;44m" + $@"
+            string BSDDISTRONAME = "NetBSD";
+            string BSDDISTROVERSION = "10.1";
+            string systemInfo = $"\u001b[38;2;203;65;44m" + $@"
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
-        OS: FreeBSD 14.2-RELEASE On {Environment.OSVersion.VersionString} amd64 (x64 or 64 Bits)
+        OS: {BSDDISTRONAME} {BSDDISTROVERSION} On {Environment.OSVersion.VersionString} amd64 (x64 or 64 Bits)
         Kernel: FREEBSDKERNEL: NetBSD 10.1 | BSDKENREL: 4.4BSD-Lite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.2
         Uptime: {GetUptime()}
         Shell: sh (Unix V7, 1979)
