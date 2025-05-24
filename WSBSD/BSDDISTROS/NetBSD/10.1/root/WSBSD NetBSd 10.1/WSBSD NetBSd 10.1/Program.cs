@@ -117,8 +117,13 @@ class Program
             }
             else if (command == "about")
             {
-                Console.WriteLine("WSBSD Terminal v1.0.0.1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
+                Console.WriteLine("WSBSD Terminal v1.0.0.2 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
                 Console.WriteLine("Developed by Coolis1362");
+                Console.WriteLine("Made On: Visual Studio 2022 17.14.2 Preview 1.0");
+                Console.WriteLine("Written in: C# 8.0");
+                Console.WriteLine("Compiled With: .NET Framework v4.7.2");
+                Console.WriteLine("License (Source Code): MIT License (No rights Reserved)");
+                Console.WriteLine("License (Binary): Copyright (All Rights Reserved), and you can not use this for illegal purposes.");
             }
             else if (command.StartsWith("pkg install "))
             {
