@@ -142,8 +142,7 @@ class Program
                 Console.WriteLine($"WINDOWS USER: {Environment.UserName}");
             }
 
-    }
-
+    }   
     static string GetCPUInfo()
     {
         ManagementObjectSearcher mos = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
@@ -259,4 +258,4 @@ class Program
         }
         }
     }
- }
+}
