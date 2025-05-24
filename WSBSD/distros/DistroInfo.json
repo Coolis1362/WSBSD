@@ -17,5 +17,16 @@
         "Path In WSBSD": "C:\\WSLBSD\\FreeBSD\\14.2 (Default)",
         "Executable Filepath": "C:\\WSLBSD\\FreeBSD\\14.2 (Default)\\root\\WSBSD FreeBSD 14.2 Default (14.2).exe"
     }
+  ],
+  "NetBSD":[
+    {
+        "Name": "NetBSD-10.1",
+        "FriendlyName": "NetBSD 10.1",
+        "Website": "https://www.netbsd.org/",
+        "Default": false,
+        "Description": "NetBSD is a free and open-source Unix-like operating system derived from the Berkeley Software Distribution (BSD). It is known for its portability, performance, and advanced networking features.",
+        "Path In WSBSD": "C:\\WSLBSD\\NetBSD\\10.1",
+        "Executable Filepath": "C:\\WSLBSD\\NetBSD\\10.1\\root\\WSBSD NetBSD 10.1 (10.1).exe"
+    }
   ]
 }
