@@ -1,6 +1,6 @@
 # NetBSD
 
-![NetBSD Logo](https://en.wikipedia.org/wiki/File:NetBSD.svg)
+![NetBSD Logo](https://www.netbsd.org/images/logos/maya/netbsd5.png)
 
 ## FreeBSD Version Changelog (14.x)
 
