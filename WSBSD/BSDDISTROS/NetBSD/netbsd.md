@@ -2,7 +2,7 @@
 
 ![NetBSD Logo](https://www.netbsd.org/images/logos/maya/netbsd5.png)
 
-## FreeBSD Version Changelog (14.x)
+## NetBSD Version Changelog (10.x)
 
 Checked = The Version Is Supported
 
