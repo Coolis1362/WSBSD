@@ -106,21 +106,10 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
-    <ROW Action="AI_CommitAccounts" Description="Commit the creation of user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_CommitAccounts"/>
-    <ROW Action="AI_CreateAccount" Description="Creating user account on the local computer" DescriptionLocId="ActionText.Description.AI_CreateAccount" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_CreateAccount"/>
-    <ROW Action="AI_CreateGroup" Description="Creating user group on the local computer" DescriptionLocId="ActionText.Description.AI_CreateGroup" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_CreateGroup"/>
     <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
-    <ROW Action="AI_ProcessAccounts" Description="Generating actions to create user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_ProcessAccounts" Template="Account: [1], Attributes: [2]" TemplateLocId="ActionText.Template.AI_ProcessAccounts"/>
-    <ROW Action="AI_ProcessGroups" Description="Generating actions to create user groups on the local computer" DescriptionLocId="ActionText.Description.AI_ProcessGroups" Template="Account: [1], Attributes: [2]" TemplateLocId="ActionText.Template.AI_ProcessGroups"/>
-    <ROW Action="AI_RemoveAccount" Description="Removing user account from the local computer" DescriptionLocId="ActionText.Description.AI_RemoveAccount" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_RemoveAccount"/>
-    <ROW Action="AI_RemoveGroup" Description="Removing user group from the local computer" DescriptionLocId="ActionText.Description.AI_RemoveGroup" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_RemoveGroup"/>
-    <ROW Action="AI_RollbackAccount" Description="Rolling back the creation of user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_RollbackAccount" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_RollbackAccount"/>
-    <ROW Action="AI_RollbackGroup" Description="Rolling back the creation of user groups on the local computer" DescriptionLocId="ActionText.Description.AI_RollbackGroup" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_RollbackGroup"/>
-    <ROW Action="AI_UninstallAccounts" Description="Generating actions to create user accounts on the local computer" DescriptionLocId="ActionText.Description.AI_ProcessAccounts" Template="Account: [1], Attributes: [2]" TemplateLocId="ActionText.Template.AI_ProcessAccounts"/>
-    <ROW Action="AI_UninstallGroups" Description="Generating actions to remove user groups on the local computer" DescriptionLocId="ActionText.Description.AI_UninstallGroups" Template="Account: [1]" TemplateLocId="ActionText.Template.AI_UninstallGroups"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
     <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
@@ -130,7 +119,6 @@
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
-    <ROW Name="userAccounts.dll" SourcePath="&lt;AI_CUSTACTS&gt;userAccounts.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
     <ROW Dialog_="BSDDistroSelection" Control="BSDDistroSelectionDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
@@ -187,9 +175,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
-    <ROW Action="AI_CommitAccounts" Type="11777" Source="userAccounts.dll" Target="CommitAccounts" WithoutSeq="true"/>
-    <ROW Action="AI_CreateAccount" Type="11265" Source="userAccounts.dll" Target="CreateAccount" WithoutSeq="true"/>
-    <ROW Action="AI_CreateGroup" Type="11265" Source="userAccounts.dll" Target="CreateGroup" WithoutSeq="true"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
@@ -205,19 +190,11 @@
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
-    <ROW Action="AI_ProcessAccounts" Type="1" Source="userAccounts.dll" Target="ProcessAccounts"/>
-    <ROW Action="AI_ProcessGroups" Type="1" Source="userAccounts.dll" Target="ProcessGroups"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
-    <ROW Action="AI_RemoveAccount" Type="11265" Source="userAccounts.dll" Target="RemoveAccount" WithoutSeq="true"/>
-    <ROW Action="AI_RemoveGroup" Type="11265" Source="userAccounts.dll" Target="RemoveGroup" WithoutSeq="true"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
-    <ROW Action="AI_RollbackAccount" Type="11521" Source="userAccounts.dll" Target="RemoveAccount" WithoutSeq="true"/>
-    <ROW Action="AI_RollbackGroup" Type="11521" Source="userAccounts.dll" Target="RemoveGroup" WithoutSeq="true"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="AI_UninstallAccounts" Type="1" Source="userAccounts.dll" Target="UninstallAccounts"/>
-    <ROW Action="AI_UninstallGroups" Type="1" Source="userAccounts.dll" Target="UninstallGroups"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:C:\"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:C:\[WSBSD_Dir]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -265,10 +242,6 @@
     <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
     <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild"/>
     <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
-    <ROW Action="AI_ProcessAccounts" Condition="(VersionNT &gt;= 500) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="1551"/>
-    <ROW Action="AI_UninstallAccounts" Condition="(VersionNT &gt;= 500) AND (REMOVE = &quot;ALL&quot;)" Sequence="1649"/>
-    <ROW Action="AI_ProcessGroups" Condition="(VersionNT &gt;= 500) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="1549"/>
-    <ROW Action="AI_UninstallGroups" Condition="(VersionNT &gt;= 500) AND (REMOVE = &quot;ALL&quot;)" Sequence="1651"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
@@ -319,11 +292,5 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="769" ActionProperty="OLDPRODUCTS"/>
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.UserAccountsComponent">
-    <ROW UserName="WSBSD Test Account" Password="6F998CA4E693D1032180" Comment="Test Account For WSBSD" Attributes="65600" Groups="WSBSD Test Accout Group" ErrorControl="0" Flags="0"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.UserGroupsComponent">
-    <ROW GroupName="WSBSD Test Accout Group" ErrorControl="0"/>
   </COMPONENT>
 </DOCUMENT>
