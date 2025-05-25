@@ -321,7 +321,7 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.UserAccountsComponent">
-    <ROW UserName="WSBSD Test Account" Password="6F998CA4E693D1032180" Comment="Test Account For WSBSD" Attributes="64" Groups="WSBSD Test Accout Group" ErrorControl="0" Flags="0"/>
+    <ROW UserName="WSBSD Test Account" Password="6F998CA4E693D1032180" Comment="Test Account For WSBSD" Attributes="65600" Groups="WSBSD Test Accout Group" ErrorControl="0" Flags="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.UserGroupsComponent">
     <ROW GroupName="WSBSD Test Accout Group" ErrorControl="0"/>
