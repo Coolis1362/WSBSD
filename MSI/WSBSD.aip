@@ -26,7 +26,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1" DirectoryOptions="3"/>
-    <ROW Directory="Config_Dir" Directory_Parent="APPDIR" DefaultDir="Config" DirectoryOptions="3"/>
     <ROW Directory="Default_Dir" Directory_Parent="FreeBSD_Dir" DefaultDir="14~1.2(D|14.2 (Default)" DirectoryOptions="3"/>
     <ROW Directory="FreeBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="FreeBSD" DirectoryOptions="3"/>
     <ROW Directory="NetBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="NetBSD" DirectoryOptions="3"/>
@@ -54,8 +53,6 @@
     <ROW Component="WSBSDNetBSD10.1.exe.config" ComponentId="{1390A6A4-E8F9-4A9C-A23E-B166883643D1}" Directory_="root_1_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;2&quot;" KeyPath="WSBSDNetBSD10.1.exe.config" Type="0"/>
     <ROW Component="WSBSDOpenBSD7.7.exe" ComponentId="{F70CBF68-96A3-4F17-BF25-CD80CD8EA84D}" Directory_="root_2_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;3&quot;" KeyPath="WSBSDOpenBSD7.7.exe"/>
     <ROW Component="WSBSDOpenBSD7.7.exe.config" ComponentId="{7BAA2871-A0AB-4539-A7E6-115DCFDAE4C9}" Directory_="root_2_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;3&quot;" KeyPath="WSBSDOpenBSD7.7.exe.config" Type="0"/>
-    <ROW Component="wsbsd.bat" ComponentId="{B5D84924-827F-43B0-85AB-C98926A85244}" Directory_="Config_Dir" Attributes="0" KeyPath="DistroInfo.json" Type="0"/>
-    <ROW Component="wsbsd.bat_1" ComponentId="{C961CCD4-B32B-4525-B820-41DD7D5928C7}" Directory_="WSBSD_Dir" Attributes="0" KeyPath="wsbsd.bat" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -65,8 +62,6 @@
     <ROW File="WSBSDFreeBSDDefault14.2.exe" Component_="WSBSDFreeBSDDefault14.2.exe" FileName="WSBSDF~1.EXE|WSBSD FreeBSD Default (14.2).exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\FreeBSD\root\WSBSD FreeBSD Default (14.2)\WSBSD FreeBSD Default (14.2)\bin\Debug\WSBSD FreeBSD Default (14.2).exe" SelfReg="false" DigSign="true"/>
     <ROW File="WSBSDFreeBSDDefault14.2.exe.config" Component_="WSBSDFreeBSDDefault14.2.exe.config" FileName="WSBSDF~1.CON|WSBSD FreeBSD Default (14.2).exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\FreeBSD\root\WSBSD FreeBSD Default (14.2)\WSBSD FreeBSD Default (14.2)\bin\Debug\WSBSD FreeBSD Default (14.2).exe.config" SelfReg="false"/>
     <ROW File="WSBSDFreeBSDDefault14.2.pdb" Component_="WSBSDFreeBSDDefault14.2.exe" FileName="WSBSDF~1.PDB|WSBSD FreeBSD Default (14.2).pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\FreeBSD\root\WSBSD FreeBSD Default (14.2)\WSBSD FreeBSD Default (14.2)\bin\Debug\WSBSD FreeBSD Default (14.2).pdb" SelfReg="false"/>
-    <ROW File="wsbsd.bat" Component_="wsbsd.bat_1" FileName="wsbsd.bat" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\wsbsd.bat" SelfReg="false"/>
-    <ROW File="DistroInfo.json" Component_="wsbsd.bat" FileName="DISTRO~1.JSO|DistroInfo.json" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\distros\DistroInfo.json" SelfReg="false"/>
     <ROW File="WSBSDNetBSD10.1.exe" Component_="WSBSDNetBSD10.1.exe" FileName="WSBSDN~1.EXE|WSBSD NetBSD 10.1.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\NetBSD\10.1\root\WSBSD NetBSd 10.1\WSBSD NetBSd 10.1\bin\Debug\WSBSD NetBSD 10.1.exe" SelfReg="false" DigSign="true"/>
     <ROW File="WSBSDNetBSD10.1.exe.config" Component_="WSBSDNetBSD10.1.exe.config" FileName="WSBSDN~1.CON|WSBSD NetBSD 10.1.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\NetBSD\10.1\root\WSBSD NetBSd 10.1\WSBSD NetBSd 10.1\bin\Debug\WSBSD NetBSD 10.1.exe.config" SelfReg="false"/>
     <ROW File="WSBSDNetBSD10.1.pdb" Component_="WSBSDNetBSD10.1.exe" FileName="WSBSDN~1.PDB|WSBSD NetBSD 10.1.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\NetBSD\10.1\root\WSBSD NetBSd 10.1\WSBSD NetBSd 10.1\bin\Debug\WSBSD NetBSD 10.1.pdb" SelfReg="false"/>
@@ -214,8 +209,6 @@
     <ROW Feature_="MainFeature" Component_="Default"/>
     <ROW Feature_="MainFeature" Component_="WSBSDFreeBSDDefault14.2.exe"/>
     <ROW Feature_="MainFeature" Component_="WSBSDFreeBSDDefault14.2.exe.config"/>
-    <ROW Feature_="MainFeature" Component_="wsbsd.bat_1"/>
-    <ROW Feature_="MainFeature" Component_="wsbsd.bat"/>
     <ROW Feature_="MainFeature" Component_="WSBSDNetBSD10.1.exe"/>
     <ROW Feature_="MainFeature" Component_="WSBSDNetBSD10.1.exe.config"/>
     <ROW Feature_="MainFeature" Component_="WSBSDOpenBSD7.7.exe"/>
