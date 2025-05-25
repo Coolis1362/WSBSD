@@ -7,10 +7,10 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="Manufacturer" Value="Coolis1362"/>
-    <ROW Property="ProductCode" Value="1033:{93032322-9426-4E68-B726-3C7DF92ACDEA} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{9B31B89F-89AE-4C13-BDE4-A65DC1BFCC1F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="WSBSD"/>
-    <ROW Property="ProductVersion" Value="1.0.0.2" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.0.0.3" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{6B09772D-B5D2-4EFF-AFED-C4D79F81D6CC}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -30,10 +30,13 @@
     <ROW Directory="Default_Dir" Directory_Parent="FreeBSD_Dir" DefaultDir="14~1.2(D|14.2 (Default)" DirectoryOptions="3"/>
     <ROW Directory="FreeBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="FreeBSD" DirectoryOptions="3"/>
     <ROW Directory="NetBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="NetBSD" DirectoryOptions="3"/>
+    <ROW Directory="Open_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="OpenBSD" DirectoryOptions="3"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="WSBSD_Dir" Directory_Parent="APPDIR" DefaultDir="WSBSD" DirectoryOptions="3"/>
+    <ROW Directory="__1_Dir" Directory_Parent="Open_Dir" DefaultDir="7.7" DirectoryOptions="3"/>
     <ROW Directory="__Dir" Directory_Parent="NetBSD_Dir" DefaultDir="10.1" DirectoryOptions="3"/>
     <ROW Directory="root_1_Dir" Directory_Parent="__Dir" DefaultDir="root" DirectoryOptions="3"/>
+    <ROW Directory="root_2_Dir" Directory_Parent="__1_Dir" DefaultDir="root" DirectoryOptions="3"/>
     <ROW Directory="root_Dir" Directory_Parent="Default_Dir" DefaultDir="root" DirectoryOptions="3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SideBySideGuidComponent">
@@ -49,6 +52,8 @@
     <ROW Component="WSBSDFreeBSDDefault14.2.exe.config" ComponentId="{78969859-1C33-48B8-B7B5-AA43CBB7EDE5}" Directory_="root_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;1&quot;" KeyPath="WSBSDFreeBSDDefault14.2.exe.config" Type="0"/>
     <ROW Component="WSBSDNetBSD10.1.exe" ComponentId="{8E83BB29-FB94-4BBA-B45A-E783689C8B7D}" Directory_="root_1_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;2&quot;" KeyPath="WSBSDNetBSD10.1.exe"/>
     <ROW Component="WSBSDNetBSD10.1.exe.config" ComponentId="{1390A6A4-E8F9-4A9C-A23E-B166883643D1}" Directory_="root_1_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;2&quot;" KeyPath="WSBSDNetBSD10.1.exe.config" Type="0"/>
+    <ROW Component="WSBSDOpenBSD7.7.exe" ComponentId="{F70CBF68-96A3-4F17-BF25-CD80CD8EA84D}" Directory_="root_2_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;3&quot;" KeyPath="WSBSDOpenBSD7.7.exe"/>
+    <ROW Component="WSBSDOpenBSD7.7.exe.config" ComponentId="{7BAA2871-A0AB-4539-A7E6-115DCFDAE4C9}" Directory_="root_2_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;3&quot;" KeyPath="WSBSDOpenBSD7.7.exe.config" Type="0"/>
     <ROW Component="wsbsd.bat" ComponentId="{B5D84924-827F-43B0-85AB-C98926A85244}" Directory_="Config_Dir" Attributes="0" KeyPath="DistroInfo.json" Type="0"/>
     <ROW Component="wsbsd.bat_1" ComponentId="{C961CCD4-B32B-4525-B820-41DD7D5928C7}" Directory_="WSBSD_Dir" Attributes="0" KeyPath="wsbsd.bat" Type="0"/>
   </COMPONENT>
@@ -65,6 +70,9 @@
     <ROW File="WSBSDNetBSD10.1.exe" Component_="WSBSDNetBSD10.1.exe" FileName="WSBSDN~1.EXE|WSBSD NetBSD 10.1.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\NetBSD\10.1\root\WSBSD NetBSd 10.1\WSBSD NetBSd 10.1\bin\Debug\WSBSD NetBSD 10.1.exe" SelfReg="false" DigSign="true"/>
     <ROW File="WSBSDNetBSD10.1.exe.config" Component_="WSBSDNetBSD10.1.exe.config" FileName="WSBSDN~1.CON|WSBSD NetBSD 10.1.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\NetBSD\10.1\root\WSBSD NetBSd 10.1\WSBSD NetBSd 10.1\bin\Debug\WSBSD NetBSD 10.1.exe.config" SelfReg="false"/>
     <ROW File="WSBSDNetBSD10.1.pdb" Component_="WSBSDNetBSD10.1.exe" FileName="WSBSDN~1.PDB|WSBSD NetBSD 10.1.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\NetBSD\10.1\root\WSBSD NetBSd 10.1\WSBSD NetBSd 10.1\bin\Debug\WSBSD NetBSD 10.1.pdb" SelfReg="false"/>
+    <ROW File="WSBSDOpenBSD7.7.exe" Component_="WSBSDOpenBSD7.7.exe" FileName="WSBSDO~1.EXE|WSBSD OpenBSD 7.7.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\OpenBSD\7.7\root\WSBSD OpenBSD 7.7\WSBSD OpenBSD 7.7\bin\Debug\WSBSD OpenBSD 7.7.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="WSBSDOpenBSD7.7.exe.config" Component_="WSBSDOpenBSD7.7.exe.config" FileName="WSBSDO~1.CON|WSBSD OpenBSD 7.7.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\OpenBSD\7.7\root\WSBSD OpenBSD 7.7\WSBSD OpenBSD 7.7\bin\Debug\WSBSD OpenBSD 7.7.exe.config" SelfReg="false"/>
+    <ROW File="WSBSDOpenBSD7.7.pdb" Component_="WSBSDOpenBSD7.7.exe" FileName="WSBSDO~1.PDB|WSBSD OpenBSD 7.7.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\WSBSD\BSDDISTROS\OpenBSD\7.7\root\WSBSD OpenBSD 7.7\WSBSD OpenBSD 7.7\bin\Debug\WSBSD OpenBSD 7.7.pdb" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -126,6 +134,9 @@
     <ROW Dialog_="BSDDistroSelection" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="BSD Distro Selection" TextStyle="[DlgTitleFont]" Order="900"/>
     <ROW Dialog_="BSDDistroSelection" Control="PushButton_1" Type="PushButton" X="86" Y="100" Width="55" Height="16" Attributes="3" Text="FreeBSD 14.2" Order="1000"/>
     <ROW Dialog_="BSDDistroSelection" Control="PushButton_2" Type="PushButton" X="86" Y="136" Width="55" Height="16" Attributes="3" Text="NetBSD 10.1" Order="1100"/>
+    <ROW Dialog_="BSDDistroSelection" Control="PushButton_3" Type="PushButton" X="86" Y="167" Width="55" Height="16" Attributes="3" Text="OpenBSD 7.7" Order="1200"/>
+    <ROW Dialog_="BSDDistroSelection" Control="Text_1" Type="Text" X="167" Y="127" Width="137" Height="33" Attributes="65539" Property="TEXT_1_PROP" Text="WARNING: You Can Only Pick ONE I Was Running this for Debugging And It turns Out you Can Only pick ONE!" Order="1300"/>
+    <ROW Dialog_="BSDDistroSelection" Control="Text_2" Type="Text" X="220" Y="44" Width="150" Height="11" Attributes="65539" Property="TEXT_2_PROP" Text="Latest WSBSD Releases For WSBSD 1.0.0.3" Order="1400"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="BSDDistroSelection" Condition="AI_INSTALL" Ordering="1"/>
@@ -156,6 +167,7 @@
     <ROW Dialog_="BSDDistroSelection" Control_="PushButton_1" Event="[INSTALL_FOLDER_TRIGGER]" Argument="1" Condition="AI_INSTALL" Ordering="0"/>
     <ROW Dialog_="BSDDistroSelection" Control_="BSDDistroSelectionDialogInitializer" Event="[INSTALL_FOLDER_TRIGGER]" Argument="2" Condition="AI_INSTALL" Ordering="0"/>
     <ROW Dialog_="BSDDistroSelection" Control_="PushButton_2" Event="[INSTALL_FOLDER_TRIGGER]" Argument="2" Condition="AI_INSTALL" Ordering="0"/>
+    <ROW Dialog_="BSDDistroSelection" Control_="PushButton_3" Event="[INSTALL_FOLDER_TRIGGER]" Argument="3" Condition="AI_INSTALL" Ordering="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -192,7 +204,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiEnvComponent">
     <ROW Environment="Path" Name="=-Path" Value="[~]\[root_Dir]" Component_="WSBSDFreeBSDDefault14.2.exe"/>
-    <ROW Environment="Path_1" Name="=-*Path" Value="[~]\[WSBSD_Dir]" Component_="wsbsd.bat_1"/>
+    <ROW Environment="Path_1" Name="=-Path" Value="[~]\[root_2_Dir]" Component_="WSBSDOpenBSD7.7.exe"/>
     <ROW Environment="Path_2" Name="=-Path" Value="[~]\[root_1_Dir]" Component_="WSBSDNetBSD10.1.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
@@ -206,6 +218,8 @@
     <ROW Feature_="MainFeature" Component_="wsbsd.bat"/>
     <ROW Feature_="MainFeature" Component_="WSBSDNetBSD10.1.exe"/>
     <ROW Feature_="MainFeature" Component_="WSBSDNetBSD10.1.exe.config"/>
+    <ROW Feature_="MainFeature" Component_="WSBSDOpenBSD7.7.exe"/>
+    <ROW Feature_="MainFeature" Component_="WSBSDOpenBSD7.7.exe.config"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
