@@ -28,5 +28,16 @@
         "Path In WSBSD": "C:\\WSLBSD\\NetBSD\\10.1",
         "Executable Filepath": "C:\\WSLBSD\\NetBSD\\10.1\\root\\WSBSD NetBSD 10.1 (10.1).exe"
     }
+  ],
+  "OpenBSD":[
+    {
+        "Name": "OpenBSD-7.7",
+        "FriendlyName": "OpenBSD 7.7",
+        "Website": "https://www.openbsd.org/",
+        "Default": false,
+        "Description": "OpenBSD is a free and open-source Unix-like operating system derived from the Berkeley Software Distribution (BSD). It is known for its focus on security, correctness, and code simplicity.",
+        "Path In WSBSD": "C:\\WSLBSD\\OpenBSD\\7.7",
+        "Executable Filepath": "C:\\WSLBSD\\OpenBSD\\7.7\\root\\WSBSD OpenBSD 7.7.exe"
+    }
   ]
 }
