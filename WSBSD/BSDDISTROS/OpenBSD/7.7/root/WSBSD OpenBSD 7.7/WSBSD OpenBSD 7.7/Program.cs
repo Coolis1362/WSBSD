@@ -151,7 +151,7 @@ class Program
                 }
                 else if (command == "whoami")
                 {
-                    Console.WriteLine("USER: root (Administrator)");
+                    Console.WriteLine($"WSBSD USER: {username}");
                     Thread.Sleep(1000);
                     Console.WriteLine($"WINDOWS USER: {Environment.UserName}");
                 }
