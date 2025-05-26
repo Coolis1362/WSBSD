@@ -1,6 +1,6 @@
 # OpenBSD
 
-![OpenBSD Logo](https://en.wikipedia.org/wiki/File:OpenBSD_Logo_-_Cartoon_Puffy_with_textual_logo_below.svg)
+![OpenBSD Logo](https://upload.wikimedia.org/wikipedia/en/8/83/OpenBSD_Logo_-_Cartoon_Puffy_with_textual_logo_below.svg)
 
 ## OpenBSD Version Changelog (7.x)
 
