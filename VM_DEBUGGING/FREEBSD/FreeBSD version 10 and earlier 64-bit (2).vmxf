@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<Foundry>
-<VM>
-<VMId type="string">52 4f a2 37 f4 f0 2e a4-d2 0d 0a 8f 3e 08 94 d8</VMId>
-<ClientMetaData>
-<clientMetaDataAttributes/>
-<HistoryEventList/></ClientMetaData>
-<vmxPathName type="string">FreeBSD version 10 and earlier 64-bit (2).vmx</vmxPathName></VM></Foundry>
