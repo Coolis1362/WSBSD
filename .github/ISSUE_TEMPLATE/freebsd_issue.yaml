@@ -1,0 +1,48 @@
+name: FreeBSD Bug Report
+description: Report a bug in the FreeBSD port of the software.
+title: "FreeBSD Bug Report: "
+labels: ["bug"]
+body:
+  - type: input
+    attributes:
+      label: "Your FreeBSD version"
+      placeholder: "14.2-RELEASE"
+    validation:
+      required: true
+
+  - type: input    
+    attributes:
+      label: "WSBSD version"
+      description: |
+        The version of WSBSD you are using, if applicable.
+      placeholder: "1.0.0.3"
+    validation:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Description of the issue"
+      description: |
+        Please provide a detailed description of the issue you are experiencing.
+        Include steps to reproduce the issue, if applicable.
+      placeholder: "Describe the issue here..."
+    validation:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Expected behavior"
+      description: |
+        Describe what you expected to happen.
+      placeholder: "What you expected to happen..."
+    validation:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Actual behavior"
+      description: |
+        Describe what actually happened.
+      placeholder: "What actually happened..."
+    validation:
+      required: true
