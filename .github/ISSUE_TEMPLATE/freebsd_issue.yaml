@@ -7,7 +7,7 @@ body:
     attributes:
       label: "Your FreeBSD version"
       placeholder: "14.2-RELEASE"
-    validation:
+    validations:
       required: true
 
   - type: input    
@@ -16,7 +16,7 @@ body:
       description: |
         The version of WSBSD you are using, if applicable.
       placeholder: "1.0.0.3"
-    validation:
+    validations:
       required: true
 
   - type: textarea
@@ -26,7 +26,7 @@ body:
         Please provide a detailed description of the issue you are experiencing.
         Include steps to reproduce the issue, if applicable.
       placeholder: "Describe the issue here..."
-    validation:
+    validations:
       required: true
 
   - type: textarea
@@ -35,7 +35,7 @@ body:
       description: |
         Describe what you expected to happen.
       placeholder: "What you expected to happen..."
-    validation:
+    validations:
       required: true
 
   - type: textarea
@@ -44,5 +44,5 @@ body:
       description: |
         Describe what actually happened.
       placeholder: "What actually happened..."
-    validation:
+    validations:
       required: true
