@@ -2,6 +2,7 @@ name: FreeBSD Bug Report
 description: Report a bug in the FreeBSD port of the software.
 title: "FreeBSD Bug Report: "
 labels: ["bug"]
+assignees: ["Coolis1362"]
 body:
   - type: input
     attributes:
