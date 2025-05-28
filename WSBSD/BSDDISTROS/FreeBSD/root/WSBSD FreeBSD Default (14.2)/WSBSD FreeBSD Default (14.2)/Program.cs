@@ -40,7 +40,7 @@ class Program
     static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("WSBSD BSD LOADER V1.0.0.1");
+        Console.WriteLine("WSBSD BSD LOADER V1.0.0.4");
         Thread.Sleep(1000);
         Console.WriteLine("Starting WSBSD 1.0.0.1...");
         Thread.Sleep(1000);
@@ -63,7 +63,7 @@ class Program
             string currentDirectory = Directory.GetCurrentDirectory();
             string fixedPath = currentDirectory.Replace('\\', '/');
             string prompt = isRoot ? " ROOT#" : " NORMALUSER$"; // Switch prompt dynamically
-            Console.Write($"\n[{Environment.UserName}@{Environment.MachineName} {fixedPath}]{prompt} ");
+            Console.Write(isRoot ? $"\n{Environment.UserName}@{Environment.MachineName}:{fixedPath} {prompt} " : $"{prompt} ");
             string command = Console.ReadLine()?.Trim();
 
             if (string.IsNullOrWhiteSpace(command))
@@ -119,7 +119,7 @@ class Program
             }
             else if (command == "about")
             {
-                Console.WriteLine("WSBSD Terminal v1.0.0.1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
+                Console.WriteLine("WSBSD Terminal v1.0.0.4 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
                 Console.WriteLine("Developed by Coolis1362");
             }
             else if (command.StartsWith("pkg install "))
@@ -232,10 +232,12 @@ class Program
                                 ..:=+*#%%%%%%%%%%%%%%%%%%%%%%%%##*+-:..                             
         ";
         string systemInfo = $"\u001b[31m" + $@"
+        {Environment.UserName}@{Environment.MachineName}
+        ------------------------------------------------
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
         OS: FreeBSD 14.2-RELEASE On {Environment.OSVersion.VersionString} amd64 (x64 or 64 Bits)
-        Kernel: FREEBSDKERNEL: FreeBSD 14-STABLE | BSDKENREL: 4.4BSDLite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.1
+        Kernel: FREEBSDKERNEL: FreeBSD 14-STABLE | BSDKENREL: 4.4BSDLite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.4
         Uptime: {GetUptime()}
         Shell: sh (Unix V7, 1979)
         CPU: {GetCPUInfo()}
