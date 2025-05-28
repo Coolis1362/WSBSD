@@ -3,4 +3,4 @@ label = WSBSD
 open = autorun.exe [open][1] "WSBSD.exe"
 
 [Installed]
-ProductCode = {9B31B89F-89AE-4C13-BDE4-A65DC1BFCC1F}
+ProductCode = {2C436D57-2F68-4839-BF86-F1F6F3C38742}
