@@ -9,5 +9,11 @@ Checked = The Version Is Supported
 Unchecked = The Version Is Not Supported
 
 - [x] OpenBSD 7.7
-- [ ] OpenBSD 7.8
-- [ ] OpenBSD 7.9
+
+## OpenBSD Changelog (8.x)
+
+Checked = The Version Is Supported
+
+Unchecked = The Version Is Not Supported
+
+- [ ] OpenBSD 8.0
