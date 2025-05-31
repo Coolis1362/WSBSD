@@ -68,95 +68,104 @@ class Program
         }
         else
         {
-            Console.WriteLine($"Welcome, {username}");
+            Console.WriteLine($"Welcome, {username}\n");
             IsRoot = false; // Set IsRoot to false if the user is not root
         }
-            while (true)
+        while (true)
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fixedPath = currentDirectory.Replace('\\', '/');
+            string prompt = IsRoot ? $"{Environment.MachineName}#" : $" {Environment.MachineName}$"; // Switch prompt dynamically
+            Console.Write($"{prompt} ");
+            string command = Console.ReadLine()?.Trim();
+
+            if (string.IsNullOrWhiteSpace(command))
+                continue;
+            if (command == "neofetch")
             {
-                string currentDirectory = Directory.GetCurrentDirectory();
-                string fixedPath = currentDirectory.Replace('\\', '/');
-                string prompt = IsRoot ? "#" : " $"; // Switch prompt dynamically
-                Console.Write($"\n{prompt} ");
-                string command = Console.ReadLine()?.Trim();
-
-                if (string.IsNullOrWhiteSpace(command))
-                    continue;
-                if (command == "neofetch")
+                Neofetch();
+            }
+            else if (command == "clear")
+            {
+                Console.Clear();
+            }
+            else if (command == "exit")
+            {
+                Console.WriteLine("Exiting WSBSD terminal.");
+                break;
+            }
+            else if (command == "help")
+            {
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, whoami, vi (More Commands Are In The Works)");
+            }
+            else if (command == "ls")
+            {
+                string[] files = Directory.GetFiles(currentDirectory);
+                foreach (string file in files)
                 {
-                    Neofetch();
+                    Console.WriteLine(Path.GetFileName(file));
                 }
-                else if (command == "clear")
+            }
+            else if (command.StartsWith("cd "))
+            {
+                string path = command.Substring(3).Trim();
+                if (Directory.Exists(path))
                 {
-                    Console.Clear();
+                    Directory.SetCurrentDirectory(path);
                 }
-                else if (command == "exit")
+                else
                 {
-                    Console.WriteLine("Exiting WSBSD terminal.");
-                    break;
+                    Console.WriteLine($"Directory '{path}' not found.");
                 }
-                else if (command == "help")
-                {
-                    Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, whoami (More Commands Are In The Works)");
-                }
-                else if (command == "ls")
-                {
-                    string[] files = Directory.GetFiles(currentDirectory);
-                    foreach (string file in files)
-                    {
-                        Console.WriteLine(Path.GetFileName(file));
-                    }
-                }
-                else if (command.StartsWith("cd "))
-                {
-                    string path = command.Substring(3).Trim();
-                    if (Directory.Exists(path))
-                    {
-                        Directory.SetCurrentDirectory(path);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Directory '{path}' not found.");
-                    }
-                }
-                else if (command.StartsWith("echo "))
-                {
-                    string print_request = command.Substring(5);
-                    Console.WriteLine(print_request);
-
-                }
-                else if (command.StartsWith("cat "))
-                {
-                    string filePath = command.Substring(4).Trim();
-                    CatCommand(filePath);
-                }
-                else if (command == "about")
-                {
-                    Console.WriteLine("WSBSD Terminal v1.0.0.4-1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
-                    Console.WriteLine("Developed by Coolis1362");
-                    Console.WriteLine("Made On: Visual Studio 2022 17.14.2 Preview 1.0");
-                    Console.WriteLine("Written in: C# 8.0");
-                    Console.WriteLine("Compiled With: .NET Framework v4.7.2");
-                    Console.WriteLine("License (Source Code): MIT License (No rights Reserved)");
-                    Console.WriteLine("License (Binary): Copyright (All Rights Reserved), and you can not use this for illegal purposes.");
-                }
-                else if (command.StartsWith("pkg install "))
-                {
-                    string msi_name = command.Substring(12).Trim();
-                    RunCommand($"{currentDirectory}\\{msi_name}.msi");
-                }
-                else if (command.StartsWith("wine "))
-                {
-                    string exe_name = command.Substring(5).Trim();
-                    RunCommand($"{currentDirectory}\\{exe_name}.exe");
-                }
-                else if (command == "whoami")
-                {
-                    Console.WriteLine($"WSBSD USER: {username}");
-                    Thread.Sleep(1000);
-                    Console.WriteLine($"WINDOWS USER: {Environment.UserName}");
-                }
+            }
+            else if (command.StartsWith("echo "))
+            {
+                string print_request = command.Substring(5);
+                Console.WriteLine(print_request);
 
             }
+            else if (command.StartsWith("cat "))
+            {
+                string filePath = command.Substring(4).Trim();
+                CatCommand(filePath);
+            }
+            else if (command == "about")
+            {
+                Console.WriteLine("WSBSD Terminal v1.0.0.4-1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
+                Console.WriteLine("Developed by Coolis1362");
+                Console.WriteLine("Made On: Visual Studio 2022 17.14.2 Preview 1.0");
+                Console.WriteLine("Written in: C# 8.0");
+                Console.WriteLine("Compiled With: .NET Framework v4.7.2");
+                Console.WriteLine("License (Source Code): MIT License (No rights Reserved)");
+                Console.WriteLine("License (Binary): Copyright (All Rights Reserved), and you can not use this for illegal purposes.");
+            }
+            else if (command.StartsWith("pkg install "))
+            {
+                string msi_name = command.Substring(12).Trim();
+                RunCommand($"{currentDirectory}\\{msi_name}.msi");
+            }
+            else if (command.StartsWith("wine "))
+            {
+                string exe_name = command.Substring(5).Trim();
+                RunCommand($"{currentDirectory}\\{exe_name}.exe");
+            }
+            else if (command == "whoami")
+            {
+                Console.WriteLine($"WSBSD USER: {username}");
+                Thread.Sleep(1000);
+                Console.WriteLine($"WINDOWS USER: {Environment.UserName}");
+            }
+            else if (command.StartsWith("vi "))
+            {
+                string filePath = command.Substring(3).Trim();
+                Vi(filePath);
+            }
+            else
+            {
+                Console.WriteLine($"Command '{command}' not recognized. Type 'help' for a list of commands.");
+            }
+
+        }
         static string GetCPUInfo()
         {
             ManagementObjectSearcher mos = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
@@ -231,5 +240,32 @@ class Program
                 Console.WriteLine($"Error: File '{filePath}' not found.");
             }
         }
+        static void Vi(string FilePath)
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "/c where edit"; // Check if Edit is in the PATH
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true; // Capture errors
+            process.StartInfo.UseShellExecute = false;
+            process.Start();
+
+            string output = process.StandardOutput.ReadToEnd();
+            string error = process.StandardError.ReadToEnd();
+            process.WaitForExit();
+
+            if (!string.IsNullOrWhiteSpace(output))
+            {
+                Console.WriteLine("Edit is installed:\n" + output);
+            }
+            else
+            {
+                Console.WriteLine("Edit is NOT installed. Please install it using:\nwinget install --id Microsoft.Edit");
+                if (!string.IsNullOrWhiteSpace(error))
+                    Console.WriteLine("Error: " + error);
+            }
+        }
+
     }
+    
 }
