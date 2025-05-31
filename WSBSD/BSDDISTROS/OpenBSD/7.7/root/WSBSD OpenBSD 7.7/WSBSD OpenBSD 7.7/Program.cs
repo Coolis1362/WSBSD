@@ -40,9 +40,9 @@ class Program
     static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("WSBSD BSD LOADER 1.0.0.3");
+        Console.WriteLine("WSBSD BSD LOADER 1.0.0.4-1");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD 1.0.0.3...");
+        Console.WriteLine("Starting WSBSD 1.0.0.4-1...");
         Thread.Sleep(1000);
         Console.WriteLine("Starting WSBSD UNIX 7.0...");
         Thread.Sleep(1000);
@@ -131,7 +131,7 @@ class Program
                 }
                 else if (command == "about")
                 {
-                    Console.WriteLine("WSBSD Terminal v1.0.0.2 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
+                    Console.WriteLine("WSBSD Terminal v1.0.0.4-1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
                     Console.WriteLine("Developed by Coolis1362");
                     Console.WriteLine("Made On: Visual Studio 2022 17.14.2 Preview 1.0");
                     Console.WriteLine("Written in: C# 8.0");
@@ -196,7 +196,7 @@ class Program
         User: {Environment.UserName}
         Machine: {Environment.MachineName}
         OS: {BSDDISTRONAME} {BSDDISTROVERSION} On {Environment.OSVersion.VersionString} amd64 (x64 or 64 Bits)
-        Kernel: FREEBSDKERNEL: OpenBSD 7.7 Kernel | BSDKENREL: 4.4BSD-Lite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.3
+        Kernel: FREEBSDKERNEL: OpenBSD 7.7 Kernel | BSDKENREL: 4.4BSD-Lite | UNIXKERNEL: Unix Kernel v7.0 | WSBSDKERNEL: WSBSD1.0.0.4-1
         Uptime: {GetUptime()}
         Shell: sh (Unix V7, 1979)
         CPU: {GetCPUInfo()}
