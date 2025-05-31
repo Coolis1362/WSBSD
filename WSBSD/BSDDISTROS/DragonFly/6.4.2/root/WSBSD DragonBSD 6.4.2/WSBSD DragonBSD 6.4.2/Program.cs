@@ -42,7 +42,7 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("WSBSD BSD LOADER V1.0.0.4");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD 1.0.0.1...");
+        Console.WriteLine("Starting WSBSD 1.0.0.4...");
         Thread.Sleep(1000);
         Console.WriteLine("Starting WSBSD UNIX 7.0...");
         Thread.Sleep(1000);
