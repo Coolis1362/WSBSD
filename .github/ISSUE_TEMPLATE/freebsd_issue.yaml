@@ -4,7 +4,6 @@ title: "FreeBSD Bug Report: "
 labels: ["bug"]
 assignees: ["Coolis1362"]
 projects: ["WSBSD FreeBSD Product Launch Project (USE ONLY FOR WSBSD FREEBSD-RELATED ISSUSES!)"]
-milestones: ["WSBSD FreeBSD support"]
 body:
   - type: input
     attributes:
