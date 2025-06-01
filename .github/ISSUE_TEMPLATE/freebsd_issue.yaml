@@ -3,6 +3,8 @@ description: Report a bug in the FreeBSD port of the software.
 title: "FreeBSD Bug Report: "
 labels: ["bug"]
 assignees: ["Coolis1362"]
+projects: ["WSBSD FreeBSD Product Launch Project (USE ONLY FOR WSBSD FREEBSD-RELATED ISSUSES!)"]
+milestones: ["WSBSD FreeBSD support"]
 body:
   - type: input
     attributes:
@@ -47,3 +49,12 @@ body:
       placeholder: "What actually happened..."
     validations:
       required: true
+  - type: textarea
+    attributes:
+      label: "Logs or Screenshots"
+      description: |
+        Please paste relevant logs, error messages, or upload screenshots that help explain the problem.
+        You can drag and drop files into this field.
+      placeholder: "Paste logs or attach screenshots here..."
+    validations:
+      required: false
