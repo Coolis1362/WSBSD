@@ -35,8 +35,6 @@ C# And .exe Files Made Via Visual Studio 2022 17.14.2 Preview 1.0 (AS OF 5/23/20
 
 Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Terminal app Project It Makes It Why C# Is the Most Used Languages In This Repo.
 
-The Upcoming WSBSD-FreeBSD-14.3-Branch Branch Will Be Worked On Around June 3rd And June 4th When FreeBSD 14.3 OS Will Be Released
-
 ## Public Copliot Chat
 
 [Click Here To Talk With the Offical WSBSD Copliot Chat!](https://github.com/copilot/share/023151be-0324-8c67-8011-7a0aa03569e4)
