@@ -61,6 +61,7 @@ class Program
         Console.WriteLine($"System Uptime: {GetUptime()}\n");
         Console.WriteLine($"OpenBSD/amd64 ({Environment.MachineName}.wsbsd.openbsd)\n");
         Console.Write($"(PASSWORD IS '{Environment.MachineName}') LOGIN: ");
+        string domain = $"{Environment.MachineName}.wsbsd.openbsd";
         string username = Console.ReadLine()?.Trim(); // Read username input
         bool IsRoot; // Declare IsRoot variable here
         string password = Environment.MachineName; // Set password to the machine name
@@ -126,7 +127,7 @@ class Program
                 }
                 else if (command == "help")
                 {
-                    Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, whoami, vi (More Commands Are In The Works)");
+                    Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, whoami, vi, uname (More Commands Are In The Works)");
                 }
                 else if (command == "ls")
                 {
@@ -190,9 +191,13 @@ class Program
                     string filePath = command.Substring(3).Trim();
                     Vi(filePath);
                 }
+                else if (command == "uname")
+                {
+                Console.WriteLine($"OpenBSD {domain} 7.7 GENERIC#619 amd64 (x64 or 64-Bits)");
+                }
                 else
                 {
-                    Console.WriteLine($"Command '{command}' not recognized. Type 'help' for a list of commands.");
+                Console.WriteLine($"Command '{command}' not recognized. Type 'help' for a list of commands.");
                 }
 
             }
