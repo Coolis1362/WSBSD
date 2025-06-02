@@ -49,6 +49,7 @@
     <Reference Include="System.Threading" />
 	<Reference Include="System.Diagnostics" />
     <Reference Include="System.Diagnostics.Eventing.Reader" />
+	<Reference Include="Microsoft.Win32"/>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
