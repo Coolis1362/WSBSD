@@ -40,24 +40,86 @@ class Program
     }
     static void Main()
     {
+        string wsbsdlogo = @"
+........................................................................
+.:********************************+..+********************************-.
+.:********************************+..+********************************-.
+.:********************************+..+****+++++++++++++++++++++*******-.
+.:********#**+++*****+++*#********+..+***-     ..::-=-::..    :+******-.
+.:*******#%#*+#%%%%%++*#%%********+..+***-  ..:+*********+:.  :+******-.
+.:******+==+#%%%%%%%+*%%%+=*******+..+***-  .+*************=. :+******-.
+.:******+-=#%%%%%%%%#*+#===*******+..+***- .-*****+=-..:-+**=.:+******-.
+.:******+=*%%%%%%%%%%%####+*******+..+***-.-:....    ..:-=+++-:+******-.
+.:******++#%%%%%%%%%%%%%%%#*******+..+***-.==-     .:=+******=-+******-.
+.:******+=*%%%%%%%%%%%%%%%+*******+..+***-.=*====++**********=-+******-.
+.:******+:-#%%%%%%%%%%%%%=-*******+..+***-.-*+-+*************-:+******-.
+.:******+:.-*#%%%%%%%%%#=.-*******+..+***- .=*+-************=.:+******-.
+.:******+-...-*#######=...-*******+..+***-  .=*+:**********=. :+******-.
+.:********************************+..+***-    .-=-******+-.   :+******-.
+.:********************************+..+***+---------====-------=+******-.
+.:********************************+..+********************************-.
+.:********************************+..+********************************-.
+.:********************************+..+********************************-.
+........................................................................
+.:++++++++++++++++++++++++++++++++=..=++++++++++++++++++++++++++++++++:.
+.:********************************+..+********************************-.
+.:********************************+..+********************************-.
+.:********************************+..+*****+......:*#**#*-.....:+*****-.
+.:*****+:........----........+****+..+*****+.=:==*=--+#-:=++-:-=+*****-.
+.:*****+:      :----==:.     +****+..+*****+.:=..:-=+%%+=-...-::+*****-.
+.:*****+:     :-=:::-=-.     +****+..+*****+ ..-*---+##+--=++..:+*****-.
+.:*****+:   .:---:.::-=.     +****+..+******--::-::-=##=:::--:-=+*****-.
+.:*****+:    .:==--:--+-.    +****+..+******:--::-===##===--:---+*****-.
+.:*****+:      :---===:.     +****+..+*****+   .-*-:-**::-+=.. :+*****-.
+.:*****+:       .--=-:.      +****+..+*****+   ..:*++#*=++-..  :+*****-.
+.:*****+::=-.......=+=-=+++=.+****+..+*****+      ..:**..      :+*****-.
+.:*****+====*+++*******#%#+*+*****+..+*****+       .:**.       :+*****-.
+.:*****+==+==+==++****#****#+*****+..+*****+       .:**        :+*****-.
+.:******###**################*****+..+*****+       .:*+        :+*****-.
+.:********************************+..+********************************-.
+.:********************************+..+********************************-.
+.:********************************+..+********************************-.
+........................................................................";
+        if (!Console.IsOutputRedirected)
+        {
+            string[] logoLines = wsbsdlogo.Split('\n');
+            foreach (string line in logoLines)
+            {
+                Console.WriteLine("\u001b[44m" + line + "\u001b[0m");
+                System.Threading.Thread.Sleep(10); // Slight delay to prevent buffer issues
+            }
+                    ;
+            Console.WriteLine("ASCII Logo Loaded."); // Debug message
+        }
+        Thread.Sleep(100);
+        Console.WriteLine("Using drive 0, partition 3");
+        Console.WriteLine("Loading......");
+        Console.WriteLine("probing: pc0 mem[638K 253M 1024K a20=on]");
+        Console.WriteLine("disk: nd0+");
+        Console.WriteLine(">> OpenBSD/amd64 BOOT 3.67");
+        Console.Write($"boot> ");
+
+        Thread.Sleep(4260);
+        Console.WriteLine("/WSBSD/OpenBSD/7.7/root/WSBSD OpenBSD 7.7.exe");
+
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("WSBSD BSD LOADER 1.0.0.4-1");
+        Console.WriteLine("\u001b[44mWSBSD BSD LOADER 1.0.0.4-1\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD 1.0.0.4-1...");
+        Console.WriteLine("\u001b[44mStarting WSBSD 1.0.0.4-1...\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD UNIX 7.0...");
+        Console.WriteLine("\u001b[44mStarting WSBSD UNIX 7.0...\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD 4.4BSDLite...");
+        Console.WriteLine("\u001b[44mStarting WSBSD 4.4BSDLite...\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD OpenBSD 7.7 Kernel...");
+        Console.WriteLine("\u001b[44mStarting WSBSD OpenBSD 7.7 Kernel...\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD OpenBSD 7.7...");
+        Console.WriteLine("\u001b[44mStarting WSBSD OpenBSD 7.7...\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("All Kernels started Now Starting WSBSD OpenBSD 7.7");
+        Console.WriteLine("\u001b[44mAll Kernels started Now Starting WSBSD OpenBSD 7.7\u001b[0m");
         Thread.Sleep(1000);
-        Console.WriteLine("OpenBSD Started Booting sh...");
+        Console.WriteLine("\u001b[44mOpenBSD Started Booting sh...\u001b[0m");
         Thread.Sleep(1000);
-        Console.Clear();
+        Console.WriteLine("\n");
         Console.WriteLine($"System Uptime: {GetUptime()}\n");
         Console.WriteLine($"OpenBSD/amd64 ({Environment.MachineName}.wsbsd.openbsd)\n");
         Console.Write($"(PASSWORD IS '{Environment.MachineName}') LOGIN: ");
@@ -101,104 +163,109 @@ class Program
             Console.WriteLine($"OpenBSD 7.7 (GENERIC) #619: Sun Apr 13 08:19:34 MDT 2025\n");
             Console.WriteLine($"Welcome to OpenBSD: The proactively secure Unix-like operating system\n");
             Console.WriteLine($"Please Report Bugs In This Link In Your Windows Browser: https://github.com/TTSConsulting/WSBSD/issues\n");
+
+        while (true)
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fixedPath = currentDirectory.Replace('\\', '/').Replace("C:", "");
             
-            while (true)
-            {
-                string currentDirectory = Directory.GetCurrentDirectory();
-                string fixedPath = currentDirectory.Replace('\\', '/');
                 string prompt = IsRoot ? $"{Environment.MachineName}#" : $" {Environment.MachineName}$"; // Switch prompt dynamically
                 Console.Write($"{prompt} ");
                 string command = Console.ReadLine()?.Trim();
 
                 if (string.IsNullOrWhiteSpace(command))
                     continue;
-                if (command == "neofetch")
+            if (command == "neofetch")
+            {
+                Neofetch();
+            }
+            else if (command == "clear")
+            {
+                Console.Clear();
+            }
+            else if (command == "exit")
+            {
+                Console.WriteLine("Exiting WSBSD terminal.");
+                break;
+            }
+            else if (command == "help")
+            {
+                Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, whoami, vi, uname (More Commands Are In The Works)");
+            }
+            else if (command == "ls")
+            {
+                string[] files = Directory.GetFiles(currentDirectory);
+                foreach (string file in files)
                 {
-                    Neofetch();
+                    Console.WriteLine(Path.GetFileName(file));
                 }
-                else if (command == "clear")
+            }
+            else if (command.StartsWith("cd "))
+            {
+                string path = command.Substring(3).Trim();
+                if (Directory.Exists(path))
                 {
-                    Console.Clear();
-                }
-                else if (command == "exit")
-                {
-                    Console.WriteLine("Exiting WSBSD terminal.");
-                    break;
-                }
-                else if (command == "help")
-                {
-                    Console.WriteLine("Available commands: neofetch, clear, exit, help, ls, cd, echo, cat, about, pkg install, wine, whoami, vi, uname (More Commands Are In The Works)");
-                }
-                else if (command == "ls")
-                {
-                    string[] files = Directory.GetFiles(currentDirectory);
-                    foreach (string file in files)
-                    {
-                        Console.WriteLine(Path.GetFileName(file));
-                    }
-                }
-                else if (command.StartsWith("cd "))
-                {
-                    string path = command.Substring(3).Trim();
-                    if (Directory.Exists(path))
-                    {
-                        Directory.SetCurrentDirectory(path);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Directory '{path}' not found.");
-                    }
-                }
-                else if (command.StartsWith("echo "))
-                {
-                    string print_request = command.Substring(5);
-                    Console.WriteLine(print_request);
-
-                }
-                else if (command.StartsWith("cat "))
-                {
-                    string filePath = command.Substring(4).Trim();
-                    CatCommand(filePath);
-                }
-                else if (command == "about")
-                {
-                    Console.WriteLine("WSBSD Terminal v1.0.0.4-1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
-                    Console.WriteLine("Developed by Coolis1362");
-                    Console.WriteLine("Made On: Visual Studio 2022 17.14.2 Preview 1.0");
-                    Console.WriteLine("Written in: C# 8.0");
-                    Console.WriteLine("Compiled With: .NET Framework v4.7.2");
-                    Console.WriteLine("License (Source Code): MIT License (No rights Reserved)");
-                    Console.WriteLine("License (Binary): Copyright (All Rights Reserved), and you can not use this for illegal purposes.");
-                }
-                else if (command.StartsWith("pkg install "))
-                {
-                    string msi_name = command.Substring(12).Trim();
-                    RunCommand($"{currentDirectory}\\{msi_name}.msi");
-                }
-                else if (command.StartsWith("wine "))
-                {
-                    string exe_name = command.Substring(5).Trim();
-                    RunCommand($"{currentDirectory}\\{exe_name}.exe");
-                }
-                else if (command == "whoami")
-                {
-                    Console.WriteLine($"WSBSD USER: {username}");
-                    Thread.Sleep(1000);
-                    Console.WriteLine($"WINDOWS USER: {Environment.UserName}");
-                }
-                else if (command.StartsWith("vi "))
-                {
-                    string filePath = command.Substring(3).Trim();
-                    Vi(filePath);
-                }
-                else if (command == "uname")
-                {
-                Console.WriteLine($"OpenBSD {domain} 7.7 GENERIC#619 amd64 (x64 or 64-Bits)");
+                    Directory.SetCurrentDirectory(path);
                 }
                 else
                 {
-                Console.WriteLine($"Command '{command}' not recognized. Type 'help' for a list of commands.");
+                    Console.WriteLine($"Directory '{path}' not found.");
                 }
+            }
+            else if (command.StartsWith("echo "))
+            {
+                string print_request = command.Substring(5);
+                Console.WriteLine(print_request);
+
+            }
+            else if (command.StartsWith("cat "))
+            {
+                string filePath = command.Substring(4).Trim();
+                CatCommand(filePath);
+            }
+            else if (command == "about")
+            {
+                Console.WriteLine("WSBSD Terminal v1.0.0.4-1 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
+                Console.WriteLine("Developed by Coolis1362");
+                Console.WriteLine("Made On: Visual Studio 2022 17.14.2 Preview 1.0");
+                Console.WriteLine("Written in: C# 8.0");
+                Console.WriteLine("Compiled With: .NET Framework v4.7.2");
+                Console.WriteLine("License (Source Code): MIT License (No rights Reserved)");
+                Console.WriteLine("License (Binary): Copyright (All Rights Reserved), and you can not use this for illegal purposes.");
+            }
+            else if (command.StartsWith("pkg install "))
+            {
+                string msi_name = command.Substring(12).Trim();
+                RunCommand($"{currentDirectory}\\{msi_name}.msi");
+            }
+            else if (command.StartsWith("wine "))
+            {
+                string exe_name = command.Substring(5).Trim();
+                RunCommand($"{currentDirectory}\\{exe_name}.exe");
+            }
+            else if (command == "whoami")
+            {
+                Console.WriteLine($"WSBSD USER: {username}");
+                Thread.Sleep(1000);
+                Console.WriteLine($"WINDOWS USER: {Environment.UserName}");
+            }
+            else if (command.StartsWith("vi "))
+            {
+                string filePath = command.Substring(3).Trim();
+                Vi(filePath);
+            }
+            else if (command == "uname")
+            {
+                Console.WriteLine($"OpenBSD {domain} 7.7 GENERIC#619 amd64 (x64 or 64-Bits)");
+            }
+            else if (command == "pwd")
+            {
+                    Console.WriteLine($"{fixedPath}");
+            }
+            else
+            {
+                Console.WriteLine($"Command '{command}' not recognized. Type 'help' for a list of commands.");
+            }
 
             }
             static string GetCPUInfo()
