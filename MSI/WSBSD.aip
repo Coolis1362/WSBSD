@@ -7,12 +7,12 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="Manufacturer" Value="Coolis1362"/>
-    <ROW Property="ProductCode" Value="1033:{8903BF0C-C9E6-4D3A-B745-4B02E52ECA95} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{2C436D57-2F68-4839-BF86-F1F6F3C38742} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="WSBSD"/>
     <ROW Property="ProductVersion" Value="1.0.0.4" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="UpgradeCode" Value="{6B09772D-B5D2-4EFF-AFED-C4D79F81D6CC}"/>
+    <ROW Property="UpgradeCode" Value="{028DA4AA-FEED-4B19-ACE4-917673D5A3C7}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#CDDVDBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#CDDVDBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0#CDDVDBuild:Windows NT 4.0" ValueLocId="-"/>
@@ -28,9 +28,9 @@
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1" DirectoryOptions="3"/>
     <ROW Directory="Default_Dir" Directory_Parent="FreeBSD_Dir" DefaultDir="14~1.2(D|14.2 (Default)" DirectoryOptions="3"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
-    <ROW Directory="DragonBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="DRAGON~1|DragonBSD" DirectoryOptions="3"/>
     <ROW Directory="FreeBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="FreeBSD" DirectoryOptions="3"/>
     <ROW Directory="NetBSD_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="NetBSD" DirectoryOptions="3"/>
+    <ROW Directory="NewFolder_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="DRAGON~2|DragonBSD" DirectoryOptions="3"/>
     <ROW Directory="Open_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="OpenBSD" DirectoryOptions="3"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="StartMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="STARTM~1|StartMenuFolder" IsPseudoRoot="1"/>
@@ -38,7 +38,7 @@
     <ROW Directory="Uninstall_Dir" Directory_Parent="WSBSD_Dir" DefaultDir="UNINST~1|Uninstall" DirectoryOptions="3"/>
     <ROW Directory="WSBSD_Dir" Directory_Parent="APPDIR" DefaultDir="WSBSD" DirectoryOptions="3"/>
     <ROW Directory="__1_Dir" Directory_Parent="Open_Dir" DefaultDir="7.7" DirectoryOptions="3"/>
-    <ROW Directory="__2_Dir" Directory_Parent="DragonBSD_Dir" DefaultDir="64~1.2|6.4.2" DirectoryOptions="3"/>
+    <ROW Directory="__2_Dir" Directory_Parent="NewFolder_Dir" DefaultDir="64~1.2|6.4.2" DirectoryOptions="3"/>
     <ROW Directory="__Dir" Directory_Parent="NetBSD_Dir" DefaultDir="10.1" DirectoryOptions="3"/>
     <ROW Directory="root_1_Dir" Directory_Parent="__Dir" DefaultDir="root" DirectoryOptions="3"/>
     <ROW Directory="root_2_Dir" Directory_Parent="__1_Dir" DefaultDir="root" DirectoryOptions="3"/>
@@ -56,8 +56,8 @@
     <ROW Component="ProductInformation" ComponentId="{BB3ED211-5ED3-4BF5-B461-AEEBD1112E68}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{B80E5C1F-2AD0-4C40-A7A8-27F72C1A5D74}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="Uninstall" ComponentId="{1A93BDD5-E21C-4D58-90BF-ED3B3A156F88}" Directory_="Uninstall_Dir" Attributes="0"/>
-    <ROW Component="WSBSDDragonBSD6.4.2.exe" ComponentId="{95F3CCE9-C67D-4D41-9C38-81A46C1E3540}" Directory_="root_3_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;4&quot;" KeyPath="WSBSDDragonBSD6.4.2.exe"/>
-    <ROW Component="WSBSDDragonBSD6.4.2.exe.config" ComponentId="{4CBA1F17-275F-47D6-86D9-236A77F08394}" Directory_="root_3_Dir" Attributes="0" KeyPath="WSBSDDragonBSD6.4.2.exe.config" Type="0"/>
+    <ROW Component="WSBSDDragonBSD6.4.2.exe" ComponentId="{0F6BE22A-09B5-4CAD-8870-CD082C156985}" Directory_="root_3_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;4&quot;" KeyPath="WSBSDDragonBSD6.4.2.exe"/>
+    <ROW Component="WSBSDDragonBSD6.4.2.exe.config" ComponentId="{F8EBEEC3-624B-4575-8D3A-18B6A22DAC94}" Directory_="root_3_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;4&quot;" KeyPath="WSBSDDragonBSD6.4.2.exe.config" Type="0"/>
     <ROW Component="WSBSDFreeBSDDefault14.2.exe" ComponentId="{840F8276-A6DD-40A3-A618-34380B41B180}" Directory_="root_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;1&quot;" KeyPath="WSBSDFreeBSDDefault14.2.exe"/>
     <ROW Component="WSBSDFreeBSDDefault14.2.exe.config" ComponentId="{B49E86E0-B299-4788-8A6D-B05F75B4252F}" Directory_="root_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;1&quot;" KeyPath="WSBSDFreeBSDDefault14.2.exe.config" Type="0"/>
     <ROW Component="WSBSDNetBSD10.1.exe" ComponentId="{8E83BB29-FB94-4BBA-B45A-E783689C8B7D}" Directory_="root_1_Dir" Attributes="0" Condition="INSTALL_FOLDER_TRIGGER = &quot;2&quot;" KeyPath="WSBSDNetBSD10.1.exe"/>
@@ -148,12 +148,12 @@
     <ROW Dialog_="BSDDistroSelection" Control="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Attributes="196611" Text="Choose A BSD Distro/Version" Order="700"/>
     <ROW Dialog_="BSDDistroSelection" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="800"/>
     <ROW Dialog_="BSDDistroSelection" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="BSD Distro Selection" TextStyle="[DlgTitleFont]" Order="900"/>
-    <ROW Dialog_="BSDDistroSelection" Control="PushButton_1" Type="PushButton" X="86" Y="79" Width="55" Height="16" Attributes="3" Text="FreeBSD 14.2" Order="1000"/>
+    <ROW Dialog_="BSDDistroSelection" Control="PushButton_1" Type="PushButton" X="86" Y="82" Width="55" Height="16" Attributes="3" Text="FreeBSD 14.2" Order="1000"/>
     <ROW Dialog_="BSDDistroSelection" Control="PushButton_2" Type="PushButton" X="86" Y="111" Width="55" Height="16" Attributes="3" Text="NetBSD 10.1" Order="1100"/>
-    <ROW Dialog_="BSDDistroSelection" Control="PushButton_3" Type="PushButton" X="86" Y="139" Width="55" Height="16" Attributes="3" Text="OpenBSD 7.7" Order="1200"/>
-    <ROW Dialog_="BSDDistroSelection" Control="Text_1" Type="Text" X="167" Y="121" Width="137" Height="33" Attributes="65539" Property="TEXT_1_PROP" Text="WARNING: You Can Only Pick ONE I Was Running this for Debugging And It turns Out you Can Only pick ONE!" Order="1300"/>
+    <ROW Dialog_="BSDDistroSelection" Control="PushButton_3" Type="PushButton" X="86" Y="144" Width="55" Height="16" Attributes="3" Text="OpenBSD 7.7" Order="1200"/>
+    <ROW Dialog_="BSDDistroSelection" Control="Text_1" Type="Text" X="167" Y="127" Width="137" Height="33" Attributes="65539" Property="TEXT_1_PROP" Text="WARNING: You Can Only Pick ONE I Was Running this for Debugging And It turns Out you Can Only pick ONE!" Order="1300"/>
     <ROW Dialog_="BSDDistroSelection" Control="Text_2" Type="Text" X="220" Y="44" Width="150" Height="11" Attributes="65539" Property="TEXT_2_PROP" Text="Latest WSBSD Releases For WSBSD 1.0.0.3" Order="1400"/>
-    <ROW Dialog_="BSDDistroSelection" Control="PushButton_4" Type="PushButton" X="86" Y="170" Width="55" Height="16" Attributes="3" Text="DragonBSD 6.4.2" Order="1500"/>
+    <ROW Dialog_="BSDDistroSelection" Control="PushButton_4" Type="PushButton" X="86" Y="177" Width="55" Height="16" Attributes="3" Text="DragonFly 6.4.2" Order="1500"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="BSDDistroSelection" Condition="AI_INSTALL" Ordering="1"/>
@@ -303,8 +303,8 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="UninstallProductNameProductVersio_1" Directory_="SHORTCUTDIR" Name="UNINST~1.4|Uninstall [|ProductName] [|ProductVersion]" Component_="AI_ExePath" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1" WkDir="StartMenuFolder"/>
     <ROW Shortcut="UninstallProductNameProductVersion" Directory_="Uninstall_Dir" Name="UNINST~1.3|Uninstall [|ProductName] [|ProductVersion]" Component_="WSBSDOpenBSD7.7.exe" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
-    <ROW Shortcut="WSBSDDragonFlyBSD6.4.2" Directory_="DesktopFolder" Name="WSBSDD~1.2|WSBSD DragonFlyBSD 6.4.2" Component_="WSBSDDragonBSD6.4.2.exe" Target="[#WSBSDDragonBSD6.4.2.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_3_Dir"/>
-    <ROW Shortcut="WSBSDDragonFlyBSD6.4.2_1" Directory_="StartMenuFolder" Name="WSBSDD~1.2|WSBSD DragonFlyBSD 6.4.2" Component_="WSBSDDragonBSD6.4.2.exe" Target="[#WSBSDDragonBSD6.4.2.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_3_Dir"/>
+    <ROW Shortcut="WSBSDDragonFly6.4.2" Directory_="DesktopFolder" Name="WSBSDD~1.2|WSBSD DragonFly 6.4.2" Component_="WSBSDDragonBSD6.4.2.exe" Target="[#WSBSDDragonBSD6.4.2.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_3_Dir"/>
+    <ROW Shortcut="WSBSDDragonFly6.4.2_1" Directory_="StartMenuFolder" Name="WSBSDD~1.2|WSBSD DragonFly 6.4.2" Component_="WSBSDDragonBSD6.4.2.exe" Target="[#WSBSDDragonBSD6.4.2.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_3_Dir"/>
     <ROW Shortcut="WSBSDNetBSD10.1" Directory_="DesktopFolder" Name="WSBSDN~1.1|WSBSD NetBSD 10.1" Component_="WSBSDNetBSD10.1.exe" Target="[#WSBSDNetBSD10.1.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_1_Dir"/>
     <ROW Shortcut="WSBSDNetBSD10.1_1" Directory_="StartMenuFolder" Name="WSBSDN~1.1|WSBSD NetBSD 10.1" Component_="WSBSDNetBSD10.1.exe" Target="[#WSBSDNetBSD10.1.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_1_Dir"/>
     <ROW Shortcut="WSBSDOpenBSD7.7" Directory_="DesktopFolder" Name="WSBSDO~1.7|WSBSD OpenBSD 7.7" Component_="WSBSDOpenBSD7.7.exe" Target="[#WSBSDOpenBSD7.7.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="root_2_Dir"/>
