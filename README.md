@@ -45,6 +45,6 @@ Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Terminal
 
 ## Websites And Websites Information
 
-- [WSBSD Offical Website][def] - The Offical Website For WSBSD
+- [WSBSD Offical Website](https://coolis1362.github.io/wsbsd.org/) - The Offical Website For WSBSD
 
-The Domain For The WSBSD Offical Website Is wsbsd.org and It Hosted Via GitHub Pages and Hosted In  [https://coolis1362.github.io/wsbsd.org/](https://coolis1362.github.io/wsbsd.org/)
+The Domain For The WSBSD Offical Website Is wsbsd.org and It Hosted Via GitHub Pages and Hosted In [https://coolis1362.github.io/wsbsd.org/](https://coolis1362.github.io/wsbsd.org/) And It's Repo hosted In Coolis1362/wsbsd.org Repo. The Subdomains For wsbsd.org Will Be Hosted In The TTSConsulting Organization And The Subdomains Will Be Hosted In TTSConsulting/<sub-domain> Repo.
