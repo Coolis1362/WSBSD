@@ -38,3 +38,7 @@ Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Terminal
 ## Public Copliot Chat
 
 [Click Here To Talk With the Offical WSBSD Copliot Chat!](https://github.com/copilot/share/023151be-0324-8c67-8011-7a0aa03569e4)
+
+## WSBSD Terminal VS Code Extension
+
+[![WSBSD Terminal on Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/Coolis1362.wsbsd-terminal?label=WSBSD%20Terminal&color=blue&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=Coolis1362.wsbsd-terminal)
