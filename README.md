@@ -42,3 +42,7 @@ Used to Be Python Scripts And Vibe-coded .bat Files But now It Has A C# Terminal
 ## WSBSD Terminal VS Code Extension
 
 [![WSBSD Terminal on Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/Coolis1362.wsbsd-terminal?label=WSBSD%20Terminal&color=blue&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=Coolis1362.wsbsd-terminal)
+
+## Websites And Websites Information
+
+- [WSBSD Offical Website](https://coolis1362.github.io/wsbsd.org/) - The Offical Website For WSBSD
