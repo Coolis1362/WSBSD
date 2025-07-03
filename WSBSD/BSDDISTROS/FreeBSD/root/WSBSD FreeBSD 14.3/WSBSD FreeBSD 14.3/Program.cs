@@ -42,7 +42,7 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("WSBSD BSD LOADER V1.0.0.4");
         Thread.Sleep(1000);
-        Console.WriteLine("Starting WSBSD 1.0.0.1...");
+        Console.WriteLine("Starting WSBSD 1.0.0.4...");
         Thread.Sleep(1000);
         Console.WriteLine("Starting WSBSD UNIX 7.0...");
         Thread.Sleep(1000);
@@ -63,7 +63,7 @@ class Program
             string currentDirectory = Directory.GetCurrentDirectory();
             string fixedPath = currentDirectory.Replace('\\', '/');
             string prompt = isRoot ? " ROOT#" : " NORMALUSER$"; // Switch prompt dynamically
-            Console.Write(isRoot ? $"\n{Environment.UserName}@{Environment.MachineName}:{fixedPath} {prompt} " : $"{prompt} ");
+            Console.Write(isRoot ? $"\nroot@{Environment.MachineName}:{fixedPath} {prompt} " : $"n{Environment.UserName}@{Environment.MachineName}:{fixedPath} {prompt} ");
             string command = Console.ReadLine()?.Trim();
 
             if (string.IsNullOrWhiteSpace(command))
@@ -120,7 +120,9 @@ class Program
             else if (command == "about")
             {
                 Console.WriteLine("WSBSD Terminal v1.0.0.4 - A simple terminal emulator (And Windows Subsystem) for BSD distros.");
-                Console.WriteLine("Developed by Coolis1362");
+                Console.WriteLine("Developed by: Coolis1362");
+                Console.WriteLine("Compiled With: .NET Framework 4.7.2");
+                Console.WriteLine("Programmed in: C#");
             }
             else if (command.StartsWith("pkg install "))
             {
