@@ -248,7 +248,7 @@ class Program
             string[] logoLines = asciiLogo.Split('\n');
             foreach (string line in logoLines)
             {
-                Console.WriteLine("\u001b[31m" + line + "\u001b[0m");
+                Console.WriteLine(line);
                 System.Threading.Thread.Sleep(10); // Slight delay to prevent buffer issues
             }
             ;
