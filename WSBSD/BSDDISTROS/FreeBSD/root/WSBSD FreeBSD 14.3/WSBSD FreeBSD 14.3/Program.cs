@@ -61,9 +61,10 @@ class Program
         while (true)
         {
             string currentDirectory = Directory.GetCurrentDirectory();
-            string fixedPath = currentDirectory.Replace('\\', '/');
+            string homePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string fixedPath = currentDirectory.Replace("\\", "/").Replace("C:/", "/").Replace($"C:\\Users\\{Environment.UserName}", "~" ).Replace("c:/", "/").Replace(homePath.Replace("\\", "/"), "~");
             string prompt = isRoot ? " ROOT#" : " NORMALUSER$"; // Switch prompt dynamically
-            Console.Write(isRoot ? $"\nroot@{Environment.MachineName}:{fixedPath} {prompt} " : $"n{Environment.UserName}@{Environment.MachineName}:{fixedPath} {prompt} ");
+            Console.Write(isRoot ? $"\nroot@{Environment.MachineName}:{fixedPath} {prompt} " : $"\n{Environment.UserName}@{Environment.MachineName}:{fixedPath} {prompt} ");
             string command = Console.ReadLine()?.Trim();
 
             if (string.IsNullOrWhiteSpace(command))
